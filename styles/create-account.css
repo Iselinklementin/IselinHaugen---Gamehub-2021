@@ -1,0 +1,136 @@
+.background {
+  background-image: url(/images/backgrounds/register-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left 50% bottom 18%;
+  height: 1400px;
+  width: 100%;
+  color: var(--white-color);
+}
+
+.far {
+  color: rgb(252, 160, 39);
+}
+
+h1 {
+  padding: 3rem 0 0 0;
+  margin: 0;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  justify-content: center;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+  height: 1100px;
+}
+
+.form-input {
+  display: block;
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.404);
+  padding: 2px 30px;
+  margin: 0.5rem;
+  opacity: 80%;
+  width: 13rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.headline {
+  position: relative;
+  top: 10%;
+  font-size: 2rem;
+  margin: auto;
+}
+
+.fieldset-column {
+  margin-top: 25px;
+}
+
+.create {
+  background-color: var(--secondary-color-blue);
+  height: 30rem;
+  color: white;
+  flex: 0;
+  padding: 3rem;
+  margin-top: 2rem;
+  border-style: none;
+}
+
+.register {
+  background-color: var(--secondary-color-purple);
+  color: white;
+  flex: 0;
+  padding: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 4.5rem;
+  height: 30rem;
+  border-style: none;
+}
+
+.button {
+  margin: auto;
+  margin-top: 1.6rem;
+}
+
+.agreement a {
+  color: var(--primary-color);
+  font-style: italic;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.privacy {
+  padding-left: 1.4rem;
+}
+
+.checkbox {
+  line-height: 1.5;
+  padding-top: 1rem;
+  text-align: left;
+  width: 240px;
+  font-size: 0.8rem;
+}
+
+button {
+  margin-top: 1.5rem;
+}
+
+.iceberg-container {
+  position: relative;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 900px) {
+  .background {
+    height: 800px;
+  }
+
+  .create-account-form {
+    flex-direction: row;
+    height: 570px;
+    margin-top: 0;
+  }
+
+  .fieldset-column {
+    margin-top: 8px;
+  }
+
+  .iceberg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/images/elements/ice-element.png);
+    width: 240px;
+    height: 200px;
+    z-index: 2;
+    position: absolute;
+    left: 69%;
+    bottom: -2rem;
+  }
+}

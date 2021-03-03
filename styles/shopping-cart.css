@@ -1,0 +1,344 @@
+.background {
+  background-image: url(/images/backgrounds/background-general.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left 50% bottom 18%;
+  height: 1500px;
+  width: 100%;
+  color: var(--white-color);
+  text-align: center;
+}
+.grid {
+  padding-top: 1rem;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "headline"
+    "products"
+    "offer-extra"
+    "coupon";
+}
+
+/* GRID */
+
+.headline {
+  grid-area: headline;
+}
+
+.products-left {
+  grid-area: products;
+}
+
+.offer-extra {
+  grid-area: offer-extra;
+}
+
+.coupon {
+  grid-area: coupon;
+}
+
+h1 {
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+h2 {
+  background-color: var(--primary-color);
+  color: black;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: initial;
+  height: 2rem;
+  line-height: 1.5;
+  width: 100%;
+}
+
+/* PRODUCTS */
+
+.products {
+  display: grid;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.gameinfo {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.052);
+}
+
+.gameinfo h3 {
+  margin-right: 1rem;
+}
+
+.castle {
+  margin-top: 0rem;
+  padding-top: 1rem;
+}
+
+.img-cart {
+  width: 70px;
+  padding: 0;
+  margin: 0;
+}
+
+.gamelink {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.valuta {
+  display: none;
+}
+
+.price {
+  font-weight: normal;
+}
+
+.trash {
+  cursor: pointer;
+}
+
+.button-blue {
+  width: 16rem;
+  margin: auto;
+  margin-top: 2.2rem;
+}
+
+/* COUPON */
+
+.coupon {
+  justify-content: center;
+  padding-top: 2rem;
+  text-align: center;
+  height: 240px;
+  background: linear-gradient(#890b334e, #d2690c);
+  margin-bottom: 2rem;
+}
+
+.coupon-container {
+  display: block;
+  margin: auto;
+  padding-top: 1rem;
+  width: 360px;
+  text-align: center;
+}
+
+.insert-coupon {
+  color: black;
+  height: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.922);
+  border-radius: 4px;
+}
+
+/* EXTRA */
+
+.extra {
+  margin-top: 2rem;
+  display: grid;
+  width: 360px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-extra {
+  display: grid;
+  justify-content: center;
+}
+
+/* GALLERY */
+
+.games-display {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  margin: 0;
+}
+
+.game {
+  flex: 0;
+  padding: 3px;
+  margin: 12px;
+  max-width: 250px;
+  height: 205px;
+  margin-top: 0;
+  padding-top: 0;
+  cursor: pointer;
+}
+
+.game img {
+  width: 130px;
+}
+
+.game img:hover {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.278),
+    rgba(255, 255, 255, 0.387)
+  );
+  border: rgba(6, 5, 5, 0) solid thin;
+}
+
+/* MEDIA 650px */
+
+@media only screen and (min-width: 650px) {
+  .background {
+    height: 1600px;
+  }
+
+  .valuta {
+    display: initial;
+  }
+
+  span {
+    display: none;
+  }
+
+  .price {
+    white-space: nowrap;
+  }
+
+  .gameinfo {
+    width: auto;
+    max-width: 450px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .coupon {
+    padding-top: 0;
+    height: 190px;
+  }
+
+  .extra h2 {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+/* MEDIA 936px */
+
+@media only screen and (min-width: 936px) {
+  main {
+    padding: 4rem;
+  }
+
+  .background {
+    height: 800px;
+  }
+
+  .grid {
+    justify-content: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, lfr);
+    grid-template-areas:
+      "headline headline"
+      "products coupon"
+      "offer-extra offer-extra";
+  }
+
+  h1 {
+    padding: 10px;
+    font-size: 2.8rem;
+    background-color: rgba(255, 255, 255, 0.068);
+  }
+
+  h3 {
+    padding: 30px;
+  }
+
+  .products {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 10px;
+    max-width: auto;
+  }
+
+  .button-blue {
+    margin-top: 3rem;
+  }
+
+  .container-right {
+    border-left: var(--white-color) solid thin;
+    padding: 10px;
+    padding-left: 1.4rem;
+    max-width: 650px;
+    max-height: 550px;
+  }
+
+  /* COUPON */
+
+  .coupon {
+    border: none;
+  }
+
+  .coupon-container {
+    width: auto;
+    padding-top: 0;
+  }
+
+  .coupon p:nth-child(2) {
+    padding-top: 0.4rem;
+  }
+
+  .insert-coupon {
+    width: 50%;
+    margin: auto;
+  }
+
+  /* EXTRA */
+
+  .extra {
+    width: auto;
+    margin: 0;
+  }
+
+  .game img {
+    width: 90px;
+  }
+
+  .game {
+    margin: 0.2rem;
+    padding: 1px;
+    height: auto;
+  }
+
+  .games-display {
+    padding-top: 0;
+  }
+}
+
+/* MEDIA 1130px */
+
+@media only screen and (min-width: 1130px) {
+  .extra {
+    align-items: baseline;
+    display: block;
+    height: 360px;
+  }
+
+  .games-display {
+    flex-wrap: nowrap;
+  }
+
+  .game {
+    margin: 0.2rem;
+    padding-top: 1rem;
+  }
+
+  .game img {
+    width: 140px;
+  }
+}
