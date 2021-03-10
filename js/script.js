@@ -11,7 +11,7 @@ async function getRAWG() {
             "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
         }});
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         const games = result.results;
 
 // --------------------------------------------- //
@@ -20,24 +20,32 @@ async function getRAWG() {
 function createHTML(games) {
 
     let html = "";
+    let text = ""
     // let count = 0;
 
         games.map((item) => {
             // console.log(item)
             // console.log(item.name)
             // count++
+            const platforms = item.parent_platforms;
+            
 
             html += `<figure class="game1 game2 game3 game4 gamehover">
                     <div class="games-java"><img src="${item.background_image}" class="gallery-top" id="games-java-css" alt="Picture"/></div>
                         
                     <div class="text-wrapper">
                     <h3><a href="pre-purchase.html" class="game-name">${item.name}</a></h3>
-                    <p class="price">NOK 299</p>
+                    ${item.parent_platforms.map(platforms => {
+                        return `<p>${platforms.platform.name}</p>`
+                        ;})
+                    .join("")}
                     </div>
                     </figure>`
 
         })
-    
+
+        
+        
         gamesTopContainer.innerHTML = html; 
         
         // if (count <= 4) {
@@ -51,14 +59,15 @@ createHTML(games);
 
 getRAWG();
 
-const test = document.querySelector(".test")
+// const test = document.querySelector(".test")
 
-gamesTopContainer.addEventListener("mouseover", displayContent)
+// gamesTopContainer.addEventListener("mouseover", displayContent)
 
-function displayContent() {
-    test.innerHTML += `<p>Testing</p>`
-}
+// function displayContent() {
+//     test.innerHTML += `<p>Testing</p>`
+// }
 
+// <p class="price">NOK 299</p>
 //                                 }
 
 
