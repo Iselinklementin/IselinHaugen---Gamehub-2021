@@ -138,7 +138,7 @@ nav a:hover {
   display: none;
 }
 
-ul li .far {
+.far {
   display: none;
 }
 
@@ -157,6 +157,7 @@ ul li .far {
 
 input[type="search"] {
   background-color: rgba(245, 245, 245, 0.884);
+  border: #000000 1px solid;
   /* border: 1px solid var(--primary-color); */
   /* color: var(--white-color); */
   border-radius: 8px;
@@ -187,9 +188,31 @@ input[type="search"] {
   width: 100%;
 }
 
+.search-icon {
+  display: none;
+}
+
 h1,
 h2 {
   text-transform: uppercase;
+}
+
+/* NEW! */
+
+.platforms {
+  border: red solid thin;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  max-width: 100px;
+}
+
+.icons-platform {
+  width: 20px;
 }
 
 /* navbar media */
@@ -207,6 +230,17 @@ h2 {
     display: none;
   }
 
+  .search-icon {
+    display: initial;
+  }
+
+  .far {
+    display: initial;
+  }
+
+  .login-text {
+    display: none;
+  }
   /* nav li {
     border-bottom: none;
   } */

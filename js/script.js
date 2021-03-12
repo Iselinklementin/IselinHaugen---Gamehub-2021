@@ -2,7 +2,57 @@ const url = "https://rawg-video-games-database.p.rapidapi.com/games";
 const galleryImg = document.querySelector(".games-java");
 const gamesTopContainer = document.querySelector(".games-display-one");
 const bolk = document.querySelector(".bolk")
-let count = 0;
+
+/* const PC = `<img class="icons-platform" src="images/icons/platform/windows.svg"/>`;
+const Linux = `<img class="icons-platform" src="images/icons/platform/linux.svg"/>`;
+const Apple = `<img class="icons-platform" src="images/icons/platform/apple.svg"/>`;
+const Nintendo = `<img class="icons-platform" src="images/icons/platform/nintendo.svg"/>`;
+const PlayStation = `<img class="icons-platform" src="images/icons/platform/ps.svg"/>`;
+const Xbox = `<img class="icons-platform" src="images/icons/platform/xbox.svg"/>`;
+const Android = `<img class="icons-platform" src="images/icons/platform/android.svg"/>`;
+const iOS = `<img class="icons-platform" src="images/icons/platform/ios.svg"/>`; */
+
+const logos = [
+{
+    company: "PC",
+    url: "images/icons/platform/windows.svg",
+},
+{
+    company: "PlayStation",
+    url: "images/icons/platform/ps.svg",
+},
+];
+
+// console.log(logos)
+
+// console.log(Object.keys(logos))
+
+/*  */
+
+/* <img class="icons-platform" src="images/icons/platform/ps.svg"/> */
+
+
+/* const PC = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/windows.svg"/>`};
+const Linux = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/linux.svg"/>`};
+const Apple = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/apple.svg"/>`};
+const Nintendo = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/nintendo.svg"/>`};
+const PlayStation = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/ps.svg"/>`};
+const Xbox = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/xbox.svg"/>`};
+const Android = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/android.svg"/>`};
+const iOS = {
+    image_url: `<img class="icons-platform" src="images/icons/platform/ios.svg"/>`}; */
+
+// const platformImages = ["PC", "Linux", "Apple", "Nintendo", "PlayStation", "Xbox", "Android", "iOS"];
+// const platformImages1 = [PC, Linux, Apple, Nintendo, PlayStation, Xbox, Android, iOS];
+
+/* Object.keys(logos) */
 
 async function getRAWG() {
     // try {
@@ -16,41 +66,30 @@ async function getRAWG() {
 
 // --------------------------------------------- //
 
-
 function createHTML(games) {
 
     let html = "";
-    let text = ""
-    // let count = 0;
 
         games.map((item) => {
             // console.log(item)
             // console.log(item.name)
-            // count++
             const platforms = item.parent_platforms;
-            
+            /* console.log(platforms.map(platform => platform.platform.name)) */
+            const platformName = platforms.map(platform => platform.platform.name);
+
+            console.log(platformName)
 
             html += `<figure class="game1 game2 game3 game4 gamehover">
                     <div class="games-java"><img src="${item.background_image}" class="gallery-top" id="games-java-css" alt="Picture"/></div>
                         
                     <div class="text-wrapper">
                     <h3><a href="pre-purchase.html" class="game-name">${item.name}</a></h3>
-                    ${item.parent_platforms.map(platforms => {
-                        return `<p>${platforms.platform.name}</p>`
-                        ;})
-                    .join("")}
                     </div>
                     </figure>`
-
         })
-
-        
         
         gamesTopContainer.innerHTML = html; 
-        
-        // if (count <= 4) {
-        //     break;
-        // }
+
     };
 
 createHTML(games);
@@ -58,6 +97,147 @@ createHTML(games);
 }
 
 getRAWG();
+
+// <ul class="platforms">
+// <li>${platformName}</li>
+// </ul>
+
+/*             function checkPlatform() {
+                // console.log(logos)
+
+            for (let i = 0; i < logos.length; i++) {
+
+                 final = [];
+                 const companyNames = logos[i].company;
+                 const logoURL = logos[i].url;
+                 console.log(companyNames + " - " + logoURL)
+
+ */
+                //  console.log(platformName.map(platform => platform)
+               
+            //             for (let j = 0; j < platformName.length; j++) {
+            //             // console.log(platformName[j])
+
+            //             let apiNames = platformName[j];
+
+            //             if (apiNames.sort() === companyNames.sort()) {
+            //                 final = logoURL;
+            //             }
+            //             // let final = companyNames.filter(check => apiNames.includes(check));
+            //             console.log(final)
+            //             return final
+            //             // console.log(final + logoURL)
+            //             }
+
+                    // }
+                // let final = companyNames.length(check => platformName.includes(check))
+                // return final;                
+            
+        // }
+
+
+
+
+                
+        // ${checkPlatform(logos, platformName)}
+        //<img class="icons-platform" src=" ${platformName} "/>
+        // <li><img class="icons-platform" src="${checkPlatform}"/></li>
+
+        // if (count <= 4) {
+        //     break;
+        // }
+/*     }) */
+
+
+
+
+
+                 /*             function checkPlatform(arr1, arr2) {
+
+                const intersectionResult = arr1.filter(check => arr2.includes(check))
+                return intersectionResult;
+              }
+ */
+//  /*                console.log(companyNames)*/
+//                 console.log(logoURL) 
+
+//                 for (let j = 0; j < companyNames.length; j++) {
+//                     for (let count = 0; count < platformName.length; count++) {
+//                         console.log(platformName[count])
+//                             if(companyNames[j] === platformName[count]) {
+
+//                                 console.log("This works")
+//                         /* final.push(logoURL[j]) */
+//                     }
+//                         // if (companyNames[j] === platformName[count]) 
+//                         // final.push(companyNames[j])
+                        
+//                     }
+//                 }
+
+//                 console.log(final)
+
+                //  const checkPlatform = companyName.filter(value => platformName.includes(value));
+
+
+                            //  if (companyNames === platformName) {
+                //      console.log("this works")
+                //  }
+
+                // logos.map((company) => {
+                //     const companyName = company.company;
+                //     console.log(companyName)
+
+                //     const checkPlatform = companyName.filter(value => platformName.includes(value));
+                //     console.log(checkPlatform + "what")
+
+/*             function checkPlatform(company, names) {
+
+    
+
+            let final = [];
+
+            for (let i = 0; i < company.length; i++) {
+                console.log(company[i].company)
+
+                for (let j = 0; j < names.length.value; i++) {
+                    if (company[i] === names[j]) final.push(company[i]);
+                    console.log(final)
+                }
+            }
+
+                return final;
+            } */
+                
+
+
+/*             function checkPlatform(arr1, arr2) {
+
+                const intersectionResult = arr1.filter(check => arr2.includes(check))
+                return intersectionResult;
+              }
+ */
+            // function checkPlatform(a, b) {
+
+            // let final = [];
+            //     for (let i = 0; i < a.length.value; i++) {
+            //         for (let j = 0; j < b.length.value; i++) {
+            //             if (a[i].value === b[j].value) final.push(a[i].value);
+            //             console.log(final)
+            //         }
+            //     }
+            //     return final;
+
+/*                 const final = platformImages.filter(value => platformName.includes(value));
+                console.log(final)
+                return `<li>this should work${final}</li>` */
+/*                 for (let i = 0; i < platformImages.length; i++) {
+                    if (platformImages.value === platformName.value) {
+                    let finalPlatforms = 
+                    return finalPlatforms;
+                    }
+                } */
+            // }
 
 // const test = document.querySelector(".test")
 
@@ -84,7 +264,13 @@ getRAWG();
 // getRAWG();
 
 
-
+/* ${platforms.map(platform => {
+    /* if (platform === platformImages) { */
+    /* console.log(platform.platform.name); */
+    /* return platformImages */
+    // return `<li>${platform.platform.name}</li>`
+    // ;}) */
+    // .join("")}
 
 /* const dropdown = document.querySelector("select");
 const box = document.querySelector(".boxesContain")

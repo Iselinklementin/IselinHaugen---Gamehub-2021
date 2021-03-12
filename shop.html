@@ -11,17 +11,6 @@
     <link href="styles/shop.css" rel="stylesheet" />
     <link href="styles/styles.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/9b8ac118a8.js" crossorigin="anonymous"></script>
-    <!-- Hotjar Tracking Code for https://iselinhaugen-gamehub-project.netlify.app -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:2259561,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
 
     <title>Shop</title>
   </head>
@@ -41,32 +30,40 @@
         <li><a href="shopping-cart.html"><img class="shoppingcart-icon" src="/images/icons/shoppingcart.svg" alt="Icon of shopping cart"></a></li>
       </div>
       <nav>
-        <ul class="wrap">
+        <section class="wrap">
           <div class="nav-left-container">
             <section class="nav-li-contain">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="shop.html" class="active" aria-current="page">Shop</a></li>
-              <li><a href="sell.html">Sell</a></li>
+              <a href="index.html">Home</a>
+              <a href="shop.html" class="active" aria-current="page">Shop</a>
+              <a href="sell.html">Sell</a>
             </section>
-
-            <div class="search-bar">
-                <form id="search">
-                  <input type="search" placeholder="Search" aria-label="Search through site">
-                </form>
-            </div>
           </div>
 
           <div class="nav-right-container">
             <section class="nav-li-contain">
-              <li class="login"><a href="login.html"><i class="far fa-user"></i>Login</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <div class="search-bar">
+                <form id="search">
+                  <input type="search" placeholder="Search" aria-label="Search through site">
+                </form>
+            </div>
+              <!-- <li><a href="contact.html">Contact</a></li> -->
+              <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+              <a href="login.html" class="login"><i class="far fa-user"></i><span class="login-text">Log in</span></a>
             </section>
-            <li class="shop-text"><a href="shopping-cart.html">Shopping cart</a></li>
+            <a href="shopping-cart.html" class="shop-text">Shopping cart</a>
           </div>
-        </ul>
+        </section>
       </nav>
   </header>
+
+  <section class="header-search">
+    <form id="search search-mobile">
+      <input id="search-input" type="search" placeholder="Search" aria-label="Search through site">
+    </form>
+</section> 
+
   <main class="background" id="main">
+
       <div class="grid">
 
         <h1 class="intro">Choose your <br> weapon</h1>
@@ -111,29 +108,31 @@
           <figure class="game1">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/entrance-game.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
             <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
-            <p class="price">NOK 299</p>
+            <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
+
           </div>
           </figure>
   
           <figure class="game2">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/purple-game.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
             <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
-            <p class="price">NOK 299</p>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
             </div>
           </figure>
   
           <figure class="game3">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/tree-game.jpg" alt="cover of entrance-game" /></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
-            <div class="gameprice">
-            <figcaption>
-              Lorem ipsum dolor sit amet diam consetetur sadipscing.
-            </figcaption>
             <p class="price">NOK 299</p>
+            <div class="gameprice">
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
             </div>
           </figure>
   
@@ -141,98 +140,90 @@
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/x-game.jpg" alt="cover of entrance-game" /></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
               <p class="price">NOK 299</p>
+              <div class="gameprice">
+              <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                          <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game1">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/woods-game.jpg" alt="cover of entrance-game" /></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game2">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/war-game-2.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game3">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/castle-game.jpg" alt="cover of entrance-game" /></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game4">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/nightlight.jpg" alt="cover of entrance-game" /></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game1">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/flowers-game.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game2">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/war-game.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game3">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/magicbook.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
           </figure>
   
           <figure class="game4">
             <a href="pre-purchase.html"><img class="shop-gallery" src="images/games/got-game.jpg" alt="cover of entrance-game"/></a>
             <h3><a href="pre-purchase.html" class="game-name">Game Name</a></h3>
+            <p class="price">NOK 299</p>
             <div class="gameprice">
-              <figcaption>
-                Lorem ipsum dolor sit amet diam consetetur sadipscing.
-              </figcaption>
-              <p class="price">NOK 299</p>
+            <figcaption>Lorem ipsum dolor sit amet diam consetetur sadipscing.</figcaption>
+                        <button class="button open-modal" id="buy" data-open="modal1">Add to cart</p>
               </div>
         </figure>
         </section>
@@ -272,6 +263,28 @@
     </section>
 </div>
 
+
+    <!-- TEST WINDOW -->
+
+
+
+    <div class="modal" id="modal1">
+      <div class="modal-dialog">
+        <header class="modal-header">
+          <h3 class="modal-header-text">Added to cart</h3>
+          <button class="close-modal" aria-label="close modal" data-close>✕</button>
+        </header>
+        <section class="modal-content">
+          <p>Excellent choice. The item has been added to the cart</p>
+        </section>
+        <footer class="modal-footer">Other things you might like:</footer>
+      </div>
+    </div>
+
+
+
+    <!-- END -->
+
 </main>
 <footer>
   <img class="footer-logo" src="/images/icons/logo.svg" alt="Gamehub logo"/>
@@ -298,5 +311,6 @@
  
   </ul>
 </footer>
+<script src="js/shop.js"></script>
 </body>
 </html>
