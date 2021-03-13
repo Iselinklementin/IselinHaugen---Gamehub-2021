@@ -46,11 +46,59 @@ h2 {
   border-radius: 4px;
   border-color: rgba(255, 255, 255, 0.404);
   padding: 2px 30px;
-  opacity: 80%;
-  text-align: center;
+  /* opacity: 80%; */
+  /* text-align: center; */
   height: 30px;
   margin: auto;
   font-size: 1rem;
+  width: 100%;
+}
+
+.fa-check-circle {
+  font-size: 1.2rem;
+  color: rgb(42, 179, 42);
+  position: absolute;
+  margin-top: -1.6rem;
+  margin-left: -1.5rem;
+  right: 0;
+  left: 0;
+  /* display: none; */
+  /* margin-right: 12.5rem; */
+}
+
+.fa-times-circle {
+  font-size: 1.2rem;
+  color: rgb(221, 62, 62);
+  position: absolute;
+  margin-top: -1.6rem;
+  margin-left: -1.5rem;
+  right: 0;
+  left: 0;
+}
+
+.fa-exclamation-triangle {
+  color: rgb(221, 62, 62);
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+.error {
+  padding: 0;
+  display: none;
+  /* font-style: italic; */
+  font-size: 0.9rem;
+  color: rgb(221, 62, 62);
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-input::placeholder {
+  width: 100%;
+  margin: 1rem;
 }
 
 fieldset {
@@ -64,7 +112,7 @@ legend {
 
 .grid form {
   margin: 1rem 0;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .checkout label {
@@ -91,6 +139,23 @@ legend {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.041);
 }
+
+/* #street {
+  width: 80%;
+}
+
+.address {
+  width: 100%;
+}
+
+#state,
+#post-code {
+  width: 40%;
+}
+
+.state-postal-wrap {
+  display: flex;
+} */
 
 /* RADIO BUTTONS DELIVERY / PAYMENT */
 
@@ -301,6 +366,10 @@ legend {
 
   /* CONTAINERS SECTIONS */
 
+  .contact-field {
+    line-height: 3;
+  }
+
   .contact,
   .address,
   .delivery,
@@ -335,7 +404,7 @@ legend {
   }
 }
 
-/* MEDIA 100px */
+/* MEDIA 1100px */
 
 @media only screen and (min-width: 1100px) {
   .grid {
