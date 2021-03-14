@@ -68,7 +68,7 @@
           <label class="name" for="name">
             <div class="label-wrapper">
             First name / Surname
-            <div class="error" id="nameError"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
+            <div class="error" id="name-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
             <!-- <i class="far fa-check-circle"></i> -->
           <input type="text" name="name" id="name" class="form-input fullname" placeholder="First name / Surname"/>
           </label>
@@ -76,7 +76,7 @@
           <label class="email" for="email">
             <div class="label-wrapper">
             Email
-            <div class="error" id="emailError"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
+            <div class="error" id="email-error"><i class="fas fa-exclamation-triangle"></i>Please enter a valid email address</div></div>
           <input type="text" name="email" id="email" class="form-input" placeholder="Email" required/>
           <!-- <i class="far fa-check-circle"></i> -->
           </label>
@@ -97,21 +97,21 @@
           <label for="street">
             <div class="label-wrapper">
             Street
-            <div class="error" id="streetError"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
+            <div class="error" id="street-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
           <input type="text" name="street" id="street" class="form-input" placeholder="Street"/>
         </label>
 
-          <label for="street">
+          <label for="state">
             <div class="label-wrapper">
             State
-            <div class="error" id="postalError"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
+            <div class="error" id="state-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
           <input type="text" name="state" id="state" class="form-input" placeholder="State"/>
         </label>
 
           <label for="postal-code">
             <div class="label-wrapper">
             Postal code
-            <div class="error" id="postalError"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
+            <div class="error" id="postal-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
           <input type="number" name="post-code" id="post-code" class="form-input" placeholder="Postal code"/>
         </label>
 
@@ -144,9 +144,9 @@
           <legend>Payment</legend>
 
           <div class="radio-wrap">
-          <label class="radio-container"><span class="radio-text">Klarna - Pay in 14 days</span><input type="radio" name="payment" value="klarna" aria-required="true"><span class="hub-radio"></span></label>
-          <label class="radio-container"><span class="radio-text">MasterCard / Credit</span><input type="radio" name="payment" value="credit" aria-required="true"><span class="hub-radio"></span></label>
-          <label class="radio-container"><span class="radio-text">Pay monthly</span><input type="radio" name="payment" value="monthly" aria-required="true"><span class="hub-radio"></span></label>
+          <label class="radio-container radio-pay"><span class="radio-text">Klarna - Pay in 14 days</span><input type="radio" name="payment" value="klarna" aria-required="true"><span class="hub-radio"></span></label>
+          <label class="radio-container radio-pay"><span class="radio-text">MasterCard / Credit</span><input type="radio" name="payment" value="credit" aria-required="true"><span class="hub-radio"></span></label>
+          <label class="radio-container radio-pay"><span class="radio-text">Pay monthly</span><input type="radio" name="payment" value="monthly" aria-required="true"><span class="hub-radio"></span></label>
         </div>
 
         </fieldset>
@@ -220,6 +220,6 @@
      
       </ul>
     </footer>
-    <script src="js/contact.js"></script>
+    <script src="js/checkout.js"></script>
   </body>
 </html>
