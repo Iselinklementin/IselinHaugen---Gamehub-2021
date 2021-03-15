@@ -29,6 +29,42 @@ for (let i = 0; i < closeConfirmation.length; i++) {
   });
 
 
+  // Kan skrives lettere?
+
+  const nintendoFilter = document.querySelector(".nintendo-filter");
+  const box = document.querySelector(".nintendo-box")
+  const platNameNintendo = document.querySelector(".plat-name-nintendo")
+  const nintendoIcon = document.querySelector(".nintendo-gamepad")
+
+  function filterPlatform() {
+
+    box.style.backgroundColor = "var(--primary-color)";
+    box.style.height = "68px";
+    platNameNintendo.style.backgroundColor = "black"; 
+    platNameNintendo.style.color = "white";
+    platNameNintendo.style.height = "22px";
+    platNameNintendo.style.lineHeight = "1.5";
+    nintendoIcon.src = "/images/icons/nintendo-black.svg";
+    
+  }
+
+  function unFilterPlatform() {
+    if (nintendoFilter.focus) {
+      console.log("this toggles")
+      // box.style.backgroundColor = "initial";
+      // box.style.height = "initial";
+      // platNameNintendo.style.backgroundColor = "initial"; 
+      // platNameNintendo.style.color = "initial";
+      // platNameNintendo.style.height = "initial";
+      // platNameNintendo.style.lineHeight = "initial";
+      // nintendoIcon.src = "initial";
+    }
+  }
+
+  nintendoFilter.addEventListener("click", filterPlatform);
+  nintendoFilter.addEventListener("click", unFilterPlatform);
+
+
 
 
 

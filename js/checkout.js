@@ -34,12 +34,12 @@ const streetError = document.querySelector("#street-error");
 const postalError = document.querySelector("#postal-error");
 const stateError = document.querySelector("#state-error");
 
-const radioPayment = document.querySelectorAll(".radio-pay")
+// const radioPayment = document.querySelectorAll(".radio-pay")
 
-function checkButton() {
-console.log("works")
-}
-checkButton();
+// function checkButton() {
+// console.log("works")
+// }
+// checkButton();
 
 function validate() {
 
@@ -89,21 +89,33 @@ function validate() {
         postal.style.borderColor = "rgb(42, 179, 42)";
         postalError.style.display = "none";
     }
+
+    if (!required(fullName.value) && validateEmail(email.value) && !required(street.value) && !required(state.value) && !required(postal.value)) {
+        button.disabled = false;
+        button.innerHTML += "yay"
+    } else {
+        button.disabled = true;
+    }
+
 }
 
-function checkRadioPayment() {
 
-const checkPayment = document.querySelectorAll("input[name="payment"]:checked");
+const checkPayment = document.querySelectorAll(`input[name="payment"]`);
+
+let value;
+
+function checkRadioPayment() {
 
     for (let i = 0; i < checkPayment.length; i++) {
 
         let radioPay = checkPayment[i];
 
-        console.log(radioPay)
+        console.log(radioPay);
+        console.log(radioPay.checked)
 
-        if(radioPay.checked) {
-            console.log("radio worked")
-            console.log(radioPay.value)
+        if (checkPayment[i].checked) {
+            value = radioPay.value;
+            console.log(this)
         }
     }
 }
@@ -120,7 +132,6 @@ function required(input) {
 
 validate();
 
-radioPayment.addEventListener("keyup", validate);
 fullName.addEventListener("keyup", validate);
 email.addEventListener("keyup", validate);
 street.addEventListener("keyup", validate);
@@ -133,6 +144,19 @@ function validateEmail(email) {
     const patternMatches = regEx.test(email);
     return patternMatches
 };
+
+
+function submitForm(event) {
+    event.preventDefault();
+    message.style.display = "block";
+    message.innerHTML += `<p>Your information has been sent<p>`;
+    // button.disabled = true;
+    form.reset();
+}
+
+button.addEventListener("submit", submitForm);
+
+
 
 // function submitForm(event) {
 //     event.preventDefault();
@@ -161,3 +185,35 @@ function validateEmail(email) {
 //         button.disabled = true;
 //     }
 // }
+
+
+
+
+
+
+// checkPayment.addEventListener("keyup", checkRadioPayment);
+
+
+    //     if(radioPay.checked) {
+    //         console.log("radio worked")
+    //         console.log(radioPay.value)
+    //         value = radioPay.value;
+    //     }
+    // }
+
+    // function atLeastOneRadio() {
+    //     console.log("huh")
+    //     return ($('input[type=radio]:checked').size() > 0);
+    // }
+
+    // atLeastOneRadio();
+
+    // if(document.getElementById('input[class="pay-klarna"]:checked')) {
+    //     console.log("Klarna radio button is checked")
+    //     Male radio button is checked
+    //   } else if(document.getElementById('pay-master').checked) {
+    //     console.log("Mastercard radio button is checked")
+    //     Female radio button is checked
+    //   } else if (document.getElementById('pay-monthly').checked)
+    //     console.log("Monthly radio button is checked")
+    // }
