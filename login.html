@@ -11,17 +11,6 @@
     <link href="styles/styles.css" rel="stylesheet" />
     <link href="styles/login.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/9b8ac118a8.js" crossorigin="anonymous"></script>
-    <!-- Hotjar Tracking Code for https://iselinhaugen-gamehub-project.netlify.app -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:2259561,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
 
     <title>Log in</title>
   </head>
@@ -42,31 +31,38 @@
       </div>
 
       <nav>
-        <ul class="wrap">
+        <section class="wrap">
           <div class="nav-left-container">
             <section class="nav-li-contain">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="shop.html">Shop</a></li>
-              <li><a href="sell.html">Sell</a></li>
+              <a href="index.html">Home</a>
+              <a href="shop.html">Shop</a>
+              <a href="sell.html">Sell</a>
             </section>
-
-            <div class="search-bar">
-                <form id="search">
-                  <input type="search" placeholder="Search" aria-label="Search through site">
-                </form>
-            </div>
           </div>
 
           <div class="nav-right-container">
             <section class="nav-li-contain">
-              <li class="login"><a href="login.html" class="active" aria-current="page"><i class="far fa-user"></i>Login</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <div class="search-bar">
+                <form id="search">
+                  <input type="search" placeholder="Search" aria-label="Search through site">
+                </form>
+            </div>
+              <!-- <li><a href="contact.html">Contact</a></li> -->
+              <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+              <a href="login.html" class="login" class="active" aria-current="page"><i class="far fa-user"></i><span class="login-text">Log in</span></a>
             </section>
-            <li class="shop-text"><a href="shopping-cart.html">Shopping cart</a></li>
+            <a href="shopping-cart.html" class="shop-text">Shopping cart</a>
           </div>
-        </ul>
+        </section>
       </nav>
   </header>
+
+  <section class="header-search">
+    <form id="search search-mobile">
+      <input id="search-input" type="search" placeholder="Search" aria-label="Search through site">
+    </form>
+</section> 
+
     <main class="background" id="main">
 
       <!-- FORM LOGIN -->

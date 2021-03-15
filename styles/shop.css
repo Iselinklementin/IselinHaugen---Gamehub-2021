@@ -162,6 +162,7 @@ h3 a {
   color: black;
   font-weight: bold;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .platform {
@@ -214,6 +215,24 @@ h3 a {
   font-size: 1rem;
   color: var(--white-color);
 }
+
+/* NEW */
+
+/* .nintendo-box-test {
+  background-color: var(--primary-color);
+  height: 68px;
+}
+
+.plat-name-nintendo-test {
+  background-color: black;
+  color: white;
+  height: 22px;
+  line-height: 1.5;
+}
+
+.nintendo-gamepad-test {
+  src: url(/images/icons/nintendo-black.svg);
+} */
 
 /* GALLERY */
 
