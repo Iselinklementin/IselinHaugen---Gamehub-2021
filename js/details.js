@@ -29,6 +29,7 @@ fetchGame();
 const title = document.querySelector("title");
 const breadcrumbs = document.querySelector(".location");
 const heading = document.querySelector("h1");
+const publish = document.querySelector(".publish")
 
 function detailedInfo(result) {
 
@@ -54,6 +55,12 @@ function imgSection(result) {
         const genresName = genres[i];
         genre.innerHTML += `<li>${genresName.name}</li>`;
     }
+
+    let publishers = result.publishers;
+    for (let i = 0; i < publishers.length; i++) {
+        // console.log(publishers[i].name)
+        publish.innerHTML += `<li>${publishers[i].name}</li>`
+    }
 }
 
 const paraIntro = document.querySelector(".intro-text");
@@ -62,6 +69,7 @@ const rating = document.querySelector(".rating");
 const ratingTop = document.querySelector(".rating-top")
 const ratingCount = document.querySelector(".count");
 const released = document.querySelector(".released");
+const recommended = document.querySelector(".recommended");
 
 function introHeading(result) {
     paraIntro.innerHTML = `${result.description}`;
@@ -71,8 +79,47 @@ function introHeading(result) {
     for (let i = 0; i < platform.length; i++) {
         let gamePlatform = platform[i].platform.name;
         // console.log(gamePlatform)
+        // console.log(gamePlatform)
         
-        platforms.innerHTML += `<li class="plat-list">${gamePlatform}</li>`;
+        /* platforms.innerHTML += `<li class="plat-list">${gamePlatform}</li>`; */
+
+        if (gamePlatform === "PC") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/windows.svg" alt="Picture of Windows-logo" class="plat-logo">`;
+/*             let platformLogo = `<li><img src="/images/icons/platform/windows.svg" alt="Picture of Windows-logo" class="logo"></li>`;
+            ${gamePlatform} */
+        }
+        
+        if (gamePlatform === "PlayStation 4") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/ps.svg" alt="Picture of PlayStation-logo" class="plat-logo ps4">`;
+        }
+
+        if (gamePlatform === "Xbox One") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/xbox.svg" alt="Picture of Xbox-logo" class="plat-logo xbox">`;
+        }
+
+        if (gamePlatform === "Xbox Series S/X") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/xbox-series.svg" alt="Picture of Xbox-logo" class="plat-logo">`;
+        }
+
+        if (gamePlatform === "Nintendo Switch") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/nintendo.svg" alt="Picture of Nintendo-logo" class="plat-logo">`;
+        }
+
+        if (gamePlatform === "macOS" || gamePlatform === "iOS") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/ios.svg" alt="Picture of macOS-logo" class="plat-logo">`;
+        }
+
+        if (gamePlatform === "Linux") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/linux.svg" alt="Picture of Linux-logo" class="plat-logo">`;
+        }
+        
+        if (gamePlatform === "PS Vita") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/vita.svg" alt="Picture of PS Vita-logo" class="plat-logo vita">`;
+        }
+
+        if (gamePlatform === "Android") {
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/android.svg" alt="Picture of Android-logo" class="plat-logo android">`;
+        }
     }
 
     rating.innerHTML += `${result.rating}`;
@@ -80,9 +127,38 @@ function introHeading(result) {
     // ratingCount.innerHTML += `Ratet by ${result.ratings_count}`
     released.innerHTML += `Released ${result.released}`;
 
-    // console.log(result.rating)
-    // /${result.rating_top}
-    console.log(result.ratings_count)
-    console.log(result.ratings_count)
-    console.log(result.ratings)
-}
+    let recommend = result.ratings;
+    for (let i = 0; i < recommend.length; i++) {
+        
+        // console.log(recommend[i]);
+        rateTitle = recommend[i].title;
+        const rateTitleCapitalized = rateTitle.charAt(0).toUpperCase() + rateTitle.slice(1)
+/*         recommended.innerHTML += `<p class="titleRec">${rateTitleCapitalized} - ${recommend[i].percent}</p>` */
+
+
+        if (rateTitle === "exceptional") {
+            recommended.innerHTML += `<p style= "color: green">${rateTitleCapitalized}
+                                    <br>${recommend[i].percent}%`;
+        }
+
+        if (rateTitle === "recommended") {
+            recommended.innerHTML += `<p style= "color: lightblue"><strong>${rateTitleCapitalized}</strong>
+                                    <br>${recommend[i].percent}%`;
+        }
+        if (rateTitle === "meh") {
+            recommended.innerHTML += `<p style= "color: orange">${rateTitleCapitalized}
+                                    <br>${recommend[i].percent}%`;
+        }
+
+        if (rateTitle === "skip") {
+            recommended.innerHTML += `<p style= "color: red">${rateTitleCapitalized}
+                                    <br>${recommend[i].percent}%`;
+        }
+    }
+}   
+
+
+// console.log(result.rating)
+// /${result.rating_top}
+// console.log(result.ratings_count)
+// console.log(result.ratings_count)
