@@ -122,7 +122,6 @@ nav a:hover {
 .shoppingcart-wrap {
   position: relative;
   right: 4%;
-  list-style-type: none;
 }
 
 .shoppingcart-icon {
@@ -138,7 +137,7 @@ nav a:hover {
   display: none;
 }
 
-.far {
+i.fa-user {
   display: none;
 }
 
@@ -146,9 +145,10 @@ nav a:hover {
   display: flex;
   justify-content: center;
   background-color: #000000;
+  border: none;
   padding: 20px;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.192);
+  /* border-top: 1px solid rgba(255, 255, 255, 0.192); */
 }
 
 .header-search form {
@@ -234,7 +234,7 @@ h2 {
     display: initial;
   }
 
-  .far {
+  i.fa-user {
     display: initial;
   }
 

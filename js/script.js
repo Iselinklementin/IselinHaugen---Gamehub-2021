@@ -1,4 +1,4 @@
-const url = "https://rawg-video-games-database.p.rapidapi.com/games";
+const url = "https://api.rawg.io/api/games?key=fcc585ed59594a80838bbaaa391aa796&dates=2019-09-01,2019-09-30&platforms=18,1,7";
 const galleryImg = document.querySelector(".games-java");
 const gamesTopContainer = document.querySelector(".games-display-one");
 const bolk = document.querySelector(".bolk")
@@ -56,12 +56,9 @@ const iOS = {
 
 async function getRAWG() {
     // try {
-        const response = await fetch(url, { "headers": {
-            "x-rapidapi-key": "cf33c9a2f0msh9a81ec9c0fe24f0p11fef3jsnd16ce6a851ba",
-            "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com"
-        }});
+        const response = await fetch(url);
         const result = await response.json();
-        // console.log(result);
+        console.log(result);
         const games = result.results;
 
 // --------------------------------------------- //
