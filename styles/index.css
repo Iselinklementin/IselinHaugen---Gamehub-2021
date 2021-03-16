@@ -138,6 +138,7 @@ h2 {
 #games-java-css {
   height: 200px;
   object-fit: cover;
+  object-position: center;
 }
 
 .game1,
@@ -160,12 +161,14 @@ h2 {
   justify-content: space-between; */
   text-align: center;
   line-height: 1.4;
+  color: white;
+  text-decoration: none;
   /* background-color: rgba(255, 255, 255, 0.137); */
 }
 
 .game-name {
+  color: white;
   text-decoration: none;
-  color: var(--color-white);
 }
 
 .price {
@@ -645,7 +648,7 @@ h3 {
   .game4 {
     flex: 0;
     margin: 0.2rem;
-    max-width: none;
+    max-width: 190px;
   }
 
   /*  TO SHOP  */

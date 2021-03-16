@@ -1,4 +1,5 @@
 const url = "https://api.rawg.io/api/games?key=fcc585ed59594a80838bbaaa391aa796&dates=2019-09-01,2019-09-30&platforms=18,1,7";
+const cors = url + `https://api.rawg.io/api/platforms?key=fcc585ed59594a80838bbaaa391aa796`
 const galleryImg = document.querySelector(".games-java");
 const gamesTopContainer = document.querySelector(".games-display-one");
 const bolk = document.querySelector(".bolk")
@@ -22,6 +23,8 @@ const logos = [
     url: "images/icons/platform/ps.svg",
 },
 ];
+
+
 
 // console.log(logos)
 
@@ -56,10 +59,10 @@ const iOS = {
 
 async function getRAWG() {
     // try {
-        const response = await fetch(url);
+        const response = await fetch(cors);
         const result = await response.json();
-        console.log(result);
         const games = result.results;
+        console.log(games);
 
 // --------------------------------------------- //
 
@@ -73,16 +76,19 @@ function createHTML(games) {
             const platforms = item.parent_platforms;
             /* console.log(platforms.map(platform => platform.platform.name)) */
             const platformName = platforms.map(platform => platform.platform.name);
+            const gameID = item.id;
+            // console.log(item.id)
 
-            console.log(platformName)
+            // console.log(platformName)
 
-            html += `<figure class="game1 game2 game3 game4 gamehover">
+            html += `<a href="details.html?id=${gameID}" class="card">
+                    <figure class="game1 game2 game3 game4 gamehover">
                     <div class="games-java"><img src="${item.background_image}" class="gallery-top" id="games-java-css" alt="Picture"/></div>
                         
                     <div class="text-wrapper">
-                    <h3><a href="pre-purchase.html" class="game-name">${item.name}</a></h3>
+                    <h3 class="game-name">${item.name}</h3>
                     </div>
-                    </figure>`
+                    </figure></a>`
         })
         
         gamesTopContainer.innerHTML = html; 
