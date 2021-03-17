@@ -65,7 +65,7 @@ h1 {
 
 .img-add {
   width: 200px;
-  height: 300px;
+  /*   height: 300px; */
   object-position: center;
   object-fit: cover;
   margin-top: 1rem;
@@ -115,11 +115,19 @@ h1 {
 }
 
 .android {
-  width: 70px;
+  width: 40px;
 }
 
 .xbox {
   width: 26px;
+}
+
+.xbox-series {
+  width: 33px;
+}
+
+.ios {
+  width: 25px;
 }
 
 h3 {
@@ -141,7 +149,7 @@ h3 {
 
 .intro-heading {
   width: 50%;
-  padding: 1rem;
+  padding: 0 3rem 0 1.5rem;
   /*   border: red solid thin; */
 }
 
@@ -154,25 +162,58 @@ h3 {
 }
 
 .ratings-box {
-  padding: 10px;
+  /*  padding: 10px; */
   display: flex;
-  background-color: var(--primary-color);
+  /* background-color: var(--white-color); */
   border-radius: 6px;
-  color: black;
+  color: white;
   align-items: center;
-  /* width: 120px; */
+  width: 100%;
   /*  flex-direction: column; */
   /*  justify-content: space-around; */
+}
+/* 
+style= "color: lightblue"  */
+
+.flex-platform-release {
+  display: flex;
+  justify-content: space-between;
+  /*   margin: 1rem; */
+}
+
+.recommended-box {
+  padding: 5px 10px;
+  color: black;
+  /*   border-radius: 6px; */
+  width: 100%;
+}
+
+.exceptional {
+  background-color: lightblue;
+}
+
+.skip {
+  background-color: red;
+}
+
+.meh {
+  background-color: orange;
+}
+
+.recommendedrate {
+  background-color: lightgreen;
 }
 
 .recommended {
   display: flex;
-  padding: 10px;
+  /*   padding: 10px; */
+  width: 100%;
+  /*   height: 65px; */
   /*   text-align: left; */
 }
 
 .recommended p {
-  margin: 10px;
+  margin: 0;
 }
 
 /* .ratings-box p {
@@ -187,12 +228,6 @@ h3 {
   margin: 0;
 }
 */
-.rating {
-  /*   font-size: 1.5rem; */
-  font-weight: bold;
-  margin: 0;
-  padding-left: 10px;
-}
 
 .intro-text {
   font-size: 1rem;
@@ -200,12 +235,16 @@ h3 {
   line-height: 1.2;
 }
 
-.buy {
+/* .buy {
   position: relative;
   width: 243px;
   height: 325px;
   margin: auto;
-  margin-top: 2rem;
+  margin: 2rem 0;
+} */
+
+#buy {
+  margin: 3rem 0;
 }
 
 @media only screen and (min-width: 640px) {

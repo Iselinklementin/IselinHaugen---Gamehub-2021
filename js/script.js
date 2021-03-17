@@ -1,5 +1,7 @@
 const url = "https://api.rawg.io/api/games?key=fcc585ed59594a80838bbaaa391aa796&dates=2019-09-01,2019-09-30&platforms=18,1,7";
-const cors = url + `https://api.rawg.io/api/platforms?key=fcc585ed59594a80838bbaaa391aa796`
+/* const cors = url + `GET https://api.rawg.io/api/platforms?key=fcc585ed59594a80838bbaaa391aa796` */
+const proxy = "https://noroffcors.herokuapp.com/"
+const corsFix = proxy + url;
 const galleryImg = document.querySelector(".games-java");
 const gamesTopContainer = document.querySelector(".games-display-one");
 const bolk = document.querySelector(".bolk")
@@ -59,7 +61,7 @@ const iOS = {
 
 async function getRAWG() {
     // try {
-        const response = await fetch(cors);
+        const response = await fetch(corsFix);
         const result = await response.json();
         const games = result.results;
         console.log(games);

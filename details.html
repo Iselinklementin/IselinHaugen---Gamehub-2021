@@ -78,9 +78,8 @@
               <img alt="Picture of the cover" class="img-header">
 
               <section class="game-details">
-                <img alt="Picture from the game" class="img-add">
+ <!--                <img alt="Picture from the game" class="img-add"> -->
                 <div class="gameinfo">
-<!--                     <div> -->
                         <h3>Genre</h3>
                         <ul class="genre"></ul>
                         <h3>Publishers</h3>
@@ -97,7 +96,6 @@
                             <li>Storage: TBC MB available space</li>
                             <li>Sound Card: TBC</li>
                         </ul>
-<!--                     </div> -->
                 </div>
               </section>
 
@@ -107,19 +105,24 @@
 
           <section class="intro-heading">
             <h1></h1>
-            <p class="platform"><span>Platform:</span></p>
-            <p class="released"></p>
+            <div class="flex-platform-release">
+                <div class="platform"><span>Platform:</span></div>
+                <p class="released"></p>
+            </div>
+            <p class="rating"><strong>Rated: </strong></p>
             <div class="rate">
                 <div class="ratings-box">
-                    <p class="rating-head">Ratings</p>
-                    <p class="rating"></p>
-                    <p class="rating-top"></p>
-                </div>
-
-                <div class="recommend">
-                    <p class="recommended"></p>
+<!--                     <p class="rating-head"></p> -->
+                    <div class="recommended"></div>
+<!--                     <p class="rating-top"></p> -->
                 </div>
             </div>
+
+            <section class="reviews"></section>
+
+                <!-- <div class="recommend"> -->
+               <!--  </div> -->
+           
                 <!-- <p class="count"></p> -->
             <div>
                 <div class="details-header">
@@ -134,18 +137,29 @@
 
         <div class="modal" id="modal1">
             <div class="modal-dialog">
-              <header class="modal-header">
-                <h3 class="modal-header-text">Added to cart</h3>
-                <button class="close-modal" aria-label="close modal" data-close>✕</button>
+
+              <header class="modal-header" id="header-modal">
+                <h3 class="modal-header-text"> 🏆 SUCCESS! 🏆 </h3>
               </header>
+
               <section class="modal-content">
-                <p>Excellent choice. The item has been added to the cart</p>
+                <p><span>Excellent choice!</span><br>
+                Your item has been added to the cart.</p>
+                <section class="cartItems">
+                  <div class="cartImg"></div>
+                  <div class="cartInfo"></div>
+                </section>
                 <div class="buttons-container">
-                <a href="" class="button modal-button" data-close>Close</a>
+                <a role="button" class="close-modal button" id="modal-button" data-close>Continue shopping</a>
                 <a href="shopping-cart.html" class="button button-blue modal-button">Go to cart</a>
                 </div>
               </section>
-              <footer class="modal-footer">Other things you might like:</footer>
+
+
+              <!-- <footer class="modal-footer">
+                <p>Other things you might like:</p>
+                <div class="suggestions"></div>
+              </footer> -->
             </div>
           </div>
 

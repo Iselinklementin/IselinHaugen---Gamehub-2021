@@ -16,6 +16,7 @@ async function fetchGame() {
         detailedInfo(result);
         imgSection(result);
         introHeading(result);
+        gameInCart(result);
 
     } catch {
 
@@ -42,12 +43,12 @@ function detailedInfo(result) {
 }
 
 const image = document.querySelector(".img-header");
-const imageAdd = document.querySelector(".img-add");
+// const imageAdd = document.querySelector(".img-add");
 const genre = document.querySelector(".genre");
 
 function imgSection(result) {
-    image.src = `${result.background_image}`;
-    imageAdd.src = `${result.background_image_additional}`;
+        image.src = `${result.background_image}`;
+    // imageAdd.src = `${result.background_image_additional}`;
 
     let genres = result.genres;
 
@@ -66,7 +67,7 @@ function imgSection(result) {
 const paraIntro = document.querySelector(".intro-text");
 const platforms = document.querySelector(".platform");
 const rating = document.querySelector(".rating");
-const ratingTop = document.querySelector(".rating-top")
+/* const ratingTop = document.querySelector(".rating-top") */
 const ratingCount = document.querySelector(".count");
 const released = document.querySelector(".released");
 const recommended = document.querySelector(".recommended");
@@ -98,7 +99,7 @@ function introHeading(result) {
         }
 
         if (gamePlatform === "Xbox Series S/X") {
-            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/xbox-series.svg" alt="Picture of Xbox-logo" class="plat-logo">`;
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/xbox-series.svg" alt="Picture of Xbox-logo" class="plat-logo xbox-series">`;
         }
 
         if (gamePlatform === "Nintendo Switch") {
@@ -106,7 +107,7 @@ function introHeading(result) {
         }
 
         if (gamePlatform === "macOS" || gamePlatform === "iOS") {
-            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/ios.svg" alt="Picture of macOS-logo" class="plat-logo">`;
+            platforms.innerHTML += `<p class="hidePlat">${gamePlatform}</p><img src="/images/icons/platform/ios.svg" alt="Picture of macOS-logo" class="plat-logo ios">`;
         }
 
         if (gamePlatform === "Linux") {
@@ -122,8 +123,8 @@ function introHeading(result) {
         }
     }
 
-    rating.innerHTML += `${result.rating}`;
-    ratingTop.innerHTML += `/ ${result.rating_top}.00`
+    rating.innerHTML += `${result.rating} / ${result.rating_top}.00`;
+   /*  ratingTop.innerHTML += `/ ${result.rating_top}.00` */
     // ratingCount.innerHTML += `Ratet by ${result.ratings_count}`
     released.innerHTML += `Released ${result.released}`;
 
@@ -137,28 +138,45 @@ function introHeading(result) {
 
 
         if (rateTitle === "exceptional") {
-            recommended.innerHTML += `<p style= "color: green">${rateTitleCapitalized}
+            recommended.innerHTML += `<p class="recommended-box exceptional"><strong>${rateTitleCapitalized}</strong>
                                     <br>${recommend[i].percent}%`;
         }
 
         if (rateTitle === "recommended") {
-            recommended.innerHTML += `<p style= "color: lightblue"><strong>${rateTitleCapitalized}</strong>
+            recommended.innerHTML += `<p class="recommended-box recommendedrate"><strong>${rateTitleCapitalized}</strong>
                                     <br>${recommend[i].percent}%`;
         }
         if (rateTitle === "meh") {
-            recommended.innerHTML += `<p style= "color: orange">${rateTitleCapitalized}
+            recommended.innerHTML += `<p class="recommended-box meh"><strong>${rateTitleCapitalized}</strong>
                                     <br>${recommend[i].percent}%`;
         }
 
         if (rateTitle === "skip") {
-            recommended.innerHTML += `<p style= "color: red">${rateTitleCapitalized}
+            recommended.innerHTML += `<p class="recommended-box skip"><strong>${rateTitleCapitalized}</strong>
                                     <br>${recommend[i].percent}%`;
         }
     }
 }   
 
 
-// console.log(result.rating)
-// /${result.rating_top}
-// console.log(result.ratings_count)
-// console.log(result.ratings_count)
+// MODAL --- NEW NEW NEW NEW NEW --- MODAL //
+
+const cartImg = document.querySelector(".cartImg");
+const cartInfo = document.querySelector(".cartInfo")
+
+function gameInCart (result) {
+
+    let platform = result.platforms
+
+    for(let i = 0; i < platform.length; i++) {
+        let gamePlatform = platform[0].platform.name;
+        console.log(gamePlatform)
+    
+
+    cartImg.innerHTML += `<img class="imgCart" src="${result.background_image}">`
+    cartInfo.innerHTML +=  `<p class="cartName">${result.name}</p>
+                            <p><strong>Released:</strong> ${result.released}
+                            <br><strong>Platform:</strong> ${gamePlatform}</p>`
+                            break;
+    }
+}
