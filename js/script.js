@@ -4,82 +4,42 @@ const proxy = "https://noroffcors.herokuapp.com/"
 const corsFix = proxy + url;
 const galleryImg = document.querySelector(".games-java");
 const gamesTopContainer = document.querySelector(".games-display-one");
-const bolk = document.querySelector(".bolk")
+// const bolk = document.querySelector(".bolk")
+const gallery = document.querySelector(".games-gallery");
 
-/* const PC = `<img class="icons-platform" src="images/icons/platform/windows.svg"/>`;
-const Linux = `<img class="icons-platform" src="images/icons/platform/linux.svg"/>`;
-const Apple = `<img class="icons-platform" src="images/icons/platform/apple.svg"/>`;
-const Nintendo = `<img class="icons-platform" src="images/icons/platform/nintendo.svg"/>`;
-const PlayStation = `<img class="icons-platform" src="images/icons/platform/ps.svg"/>`;
-const Xbox = `<img class="icons-platform" src="images/icons/platform/xbox.svg"/>`;
-const Android = `<img class="icons-platform" src="images/icons/platform/android.svg"/>`;
-const iOS = `<img class="icons-platform" src="images/icons/platform/ios.svg"/>`; */
-
-const logos = [
-{
-    company: "PC",
-    url: "images/icons/platform/windows.svg",
-},
-{
-    company: "PlayStation",
-    url: "images/icons/platform/ps.svg",
-},
-];
-
-
-
-// console.log(logos)
-
-// console.log(Object.keys(logos))
-
-/*  */
-
-/* <img class="icons-platform" src="images/icons/platform/ps.svg"/> */
-
-
-/* const PC = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/windows.svg"/>`};
-const Linux = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/linux.svg"/>`};
-const Apple = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/apple.svg"/>`};
-const Nintendo = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/nintendo.svg"/>`};
-const PlayStation = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/ps.svg"/>`};
-const Xbox = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/xbox.svg"/>`};
-const Android = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/android.svg"/>`};
-const iOS = {
-    image_url: `<img class="icons-platform" src="images/icons/platform/ios.svg"/>`}; */
-
-// const platformImages = ["PC", "Linux", "Apple", "Nintendo", "PlayStation", "Xbox", "Android", "iOS"];
-// const platformImages1 = [PC, Linux, Apple, Nintendo, PlayStation, Xbox, Android, iOS];
-
-/* Object.keys(logos) */
 
 async function getRAWG() {
-    // try {
+    try {
         const response = await fetch(corsFix);
         const result = await response.json();
         const games = result.results;
-        console.log(games);
 
+        console.log(games);
+        console.log("This works");
+
+        index(games);
+        shop(games);
+
+    } catch {
+
+    } finally {
+
+    }
+};
+
+getRAWG();
 // --------------------------------------------- //
 
-function createHTML(games) {
+function index(games) {
 
+    console.log("This works 1");
     let html = "";
+    gamesTopContainer.innerHTML = "";
 
         games.map((item) => {
-            // console.log(item)
-            // console.log(item.name)
-            const platforms = item.parent_platforms;
-            /* console.log(platforms.map(platform => platform.platform.name)) */
-            const platformName = platforms.map(platform => platform.platform.name);
+
             const gameID = item.id;
-            // console.log(item.id)
+            console.log(item.id)
 
             // console.log(platformName)
 
@@ -97,11 +57,32 @@ function createHTML(games) {
 
     };
 
-createHTML(games);
 
-}
+    function shop(games) {
 
-getRAWG();
+        console.log("This works 2");
+        gallery.innerHTML = "";
+        let htmlGallery = "";
+
+        games.map((game) => {
+            const gameID = game.id;
+            console.log(gameID)
+
+            htmlGallery += `<a href="details.html?id=${gameID}" class="card">
+                            <figure class="game1 game2 game3 game4 gamehover">
+                            <div class="games-java"><img src="${game.background_image}" class="shop-gallery" id="games-java-css" alt="Picture"/></div>
+                
+                            <div class="text-wrapper">
+                            <h3 class="game-name">${game.name}</h3>
+                            </div>
+                            </figure></a>`
+        })
+
+        gallery.innerHTML = htmlGallery;
+
+    };
+
+
 
 // <ul class="platforms">
 // <li>${platformName}</li>
@@ -140,6 +121,11 @@ getRAWG();
             
         // }
 
+                    // console.log(item)
+            // console.log(item.name)
+  /*           const platforms = item.parent_platforms; */
+            /* console.log(platforms.map(platform => platform.platform.name)) */
+/*             const platformName = platforms.map(platform => platform.platform.name); */
 
 
 

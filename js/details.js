@@ -2,7 +2,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const url = `https://api.rawg.io/api/games/` + id + "?key=fcc585ed59594a80838bbaaa391aa796&dates=2019-09-01,2019-09-30&platforms=18,1,7"
-
+const loader = document.querySelector(".loader");
 // console.log(id)
 // console.log(url)
 
@@ -11,8 +11,9 @@ async function fetchGame() {
         const response = await fetch(url);
         const result = await response.json();
         console.log(result);
+        
+        loader.remove()
         // console.log(result.name);
-
         detailedInfo(result);
         imgSection(result);
         introHeading(result);

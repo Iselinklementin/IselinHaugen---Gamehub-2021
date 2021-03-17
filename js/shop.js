@@ -1,15 +1,58 @@
-/* const button = document.querySelectorAll("#buy")
-// let windowObjectReference;
-// const windowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
-const isVisible = "is-visible"; */
+// const url = "https://api.rawg.io/api/games?key=fcc585ed59594a80838bbaaa391aa796&dates=2019-09-01,2019-09-30&platforms=18,1,7";
+// /* const cors = url + `GET https://api.rawg.io/api/platforms?key=fcc585ed59594a80838bbaaa391aa796` */
+// const proxy = "https://noroffcors.herokuapp.com/"
+// const corsFix = proxy + url;
+// const gallery = document.querySelector(".games-gallery");
+
+// async function getRAWG() {
+//   try {
+//       const response = await fetch(corsFix);
+//       const result = await response.json();
+//       const games = result.results;
+
+//       console.log(games);
+//       console.log("This works");
+
+//       shop(games);
+
+//   } catch {
+
+//   } finally {
+
+//   }
+// };
+
+// getRAWG();
 
 
-// const document = document.querySelector("body")
-  // document.addEventListener("click", event => {
-  //   if (event.target == document.querySelector(".modal.is-visible")) {
-  //     document.querySelector(".modal.is-visible").classList.remove(isVisible);
-  //   }
-  // });
+//     function shop(games) {
+
+//       console.log("This works 2");
+//       gallery.innerHTML = "";
+//       let htmlGallery = "";
+//       let btn = "";
+
+//       games.map((game) => {
+//           const gameID = game.id;
+//           console.log(gameID)
+
+//           htmlGallery += `<a href="details.html?id=${gameID}">
+//                           <figure class="game1 gamehover">
+//                           <div class="img-wrap"><img src="${game.background_image}" class="shop-gallery" alt="Picture"/></div>
+              
+//                           <div class="text-wrapper">
+//                           <h3 class="game-name">${game.name}</h3>
+//                           <p class="price">NOK 299</p>
+//                           <figcaption>Lorem ipsum dolor.</figcaption></a>  
+//                           <button class="button open-modal" id="buy" data-open="modal1">Add to cart</button>
+//                           </div>
+//                           </figure>                       
+//                           `
+//       })
+
+//       gallery.innerHTML = htmlGallery;
+
+//   };
 
   ////////// NINTENDO ////////
 
@@ -127,6 +170,25 @@ const isVisible = "is-visible"; */
    psIcon.src = "/images/icons/ps.svg";
  }, true);
 
+
+ const cartImg = document.querySelector(".cartImg");
+const cartInfo = document.querySelector(".cartInfo")
+
+function gameInCart () {
+    // for(let i = 0; i < platform.length; i++) {
+    //     let gamePlatform = platform[0].platform.name;
+    //     console.log(gamePlatform)
+    
+
+    cartImg.innerHTML += `<img class="imgCart" id="shopimg" src="images/games/war-game.jpg">`
+    cartInfo.innerHTML +=  `<p class="cartName">Game name</p>
+                            <p><strong>Released:</strong> 01.02.2019
+                            <br><strong>Platform:</strong> PC</p>`
+                          
+    // }
+}
+
+gameInCart();
 
   //   nintendoFilter.removeEventListener("click", filterPlatform, false)
   // })

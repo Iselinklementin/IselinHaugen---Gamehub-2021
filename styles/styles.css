@@ -199,6 +199,50 @@ h2 {
 
 /* ----------   NEW!   ------------ */
 
+.loader {
+  margin: auto;
+  border: 16px solid rgb(255, 174, 68);
+  /* border-top: 16px solid rgb(255, 174, 68); */
+  border-radius: 100%;
+  background-color: rgb(255, 174, 68);
+  width: 80px;
+  height: 80px;
+  animation: pulse 2s linear infinite;
+}
+
+/* .spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #630732;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  animation: pulse 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 /* MODAL  */
 
 .modal {
