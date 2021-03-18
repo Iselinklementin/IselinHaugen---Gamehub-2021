@@ -7,7 +7,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left 50% bottom 18%;
-  height: 800px;
+  height: 850px;
   width: 100%;
   color: var(--white-color);
   text-align: center;
@@ -37,23 +37,64 @@ fieldset {
   margin: auto;
 }
 
-label {
+/* .label-wrapper {
+  padding: 0 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+/* label {
   font-size: 0.8rem;
   font-weight: lighter;
   display: none;
-}
+} */
 
 .form-input {
   display: block;
   border-radius: 4px;
   border-color: rgba(255, 255, 255, 0.404);
   padding: 2px 30px;
-  margin: 1rem;
+  margin: 0.5rem;
   opacity: 80%;
-  width: 17rem;
+  width: 20rem;
   height: 2rem;
   text-align: center;
   font-size: 1rem;
+}
+
+.fa-exclamation-triangle {
+  color: rgb(221, 62, 62);
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+.error {
+  /*   padding: 0 15px; */
+  margin: 0 0.5rem;
+  display: none;
+  /* font-style: italic; */
+  font-size: 0.9rem;
+  color: rgb(221, 62, 62);
+  background-color: white;
+  border: rgb(221, 62, 62) solid 2px;
+}
+
+.error-button {
+  display: none;
+  font-size: 0.9rem;
+  color: rgb(221, 62, 62);
+  background-color: white;
+  border: rgb(221, 62, 62) solid 2px;
+  height: 32px;
+  width: 328px;
+  line-height: 2;
+  margin: auto;
+  margin-bottom: 1.4rem;
+}
+
+.label {
+  margin-bottom: 1rem;
 }
 
 .link {
@@ -61,7 +102,7 @@ label {
   font-style: italic;
   font-weight: lighter;
   font-size: 0.8rem;
-  margin-top: -0.5rem;
+  /* margin-top: -0.5rem; */
   text-decoration: none;
   display: block;
 }

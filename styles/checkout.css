@@ -54,19 +54,19 @@ h2 {
   width: 100%;
 }
 
-.fa-check-circle {
+/* .fa-check-circle {
   font-size: 1.2rem;
   color: rgb(42, 179, 42);
   position: absolute;
   margin-top: -1.6rem;
   margin-left: -1.5rem;
   right: 0;
-  left: 0;
-  /* display: none; */
-  /* margin-right: 12.5rem; */
-}
+  left: 0; */
+/* display: none; */
+/* margin-right: 12.5rem; */
+/* } */
 
-.fa-times-circle {
+/* .fa-times-circle {
   font-size: 1.2rem;
   color: rgb(221, 62, 62);
   position: absolute;
@@ -74,7 +74,7 @@ h2 {
   margin-left: -1.5rem;
   right: 0;
   left: 0;
-}
+} */
 
 .fa-exclamation-triangle {
   color: rgb(221, 62, 62);

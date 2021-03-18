@@ -18,7 +18,6 @@ async function getRAWG() {
         console.log("This works");
 
         index(games);
-        shop(games);
 
     } catch {
 
@@ -54,31 +53,6 @@ function index(games) {
         })
         
         gamesTopContainer.innerHTML = html; 
-
-    };
-
-
-    function shop(games) {
-
-        console.log("This works 2");
-        gallery.innerHTML = "";
-        let htmlGallery = "";
-
-        games.map((game) => {
-            const gameID = game.id;
-            console.log(gameID)
-
-            htmlGallery += `<a href="details.html?id=${gameID}" class="card">
-                            <figure class="game1 game2 game3 game4 gamehover">
-                            <div class="games-java"><img src="${game.background_image}" class="shop-gallery" id="games-java-css" alt="Picture"/></div>
-                
-                            <div class="text-wrapper">
-                            <h3 class="game-name">${game.name}</h3>
-                            </div>
-                            </figure></a>`
-        })
-
-        gallery.innerHTML = htmlGallery;
 
     };
 
