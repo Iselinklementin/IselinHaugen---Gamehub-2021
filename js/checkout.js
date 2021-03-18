@@ -109,7 +109,27 @@ postal.addEventListener("input", function() {
         }
     }));
 
+/*     function deliverVal () {
 
+for (let i = 0; i < deliver.length; i++) {
+    console.log(deliver[i])
+    if (deliver[i].checked) {
+        deliveryError.style.display = "none";
+                return true;
+    } else {
+        deliveryError.style.display = "block";
+        return false;
+    }
+} */
+
+
+/* function checkLength(value, len) {
+    if (value.trim().length > len) {
+        return true;
+    } else {
+        return false;
+    }
+}  */
 
 const deliveryError = document.querySelector(".delivery-error");
 const payError = document.querySelector(".payment-error");
@@ -141,7 +161,7 @@ function submitForm(event) {
     let stateVal = checkLength(state.value, 1);
     let postVal = checkLength(postal.value, 4);
 
-    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal && deliver && pay) {
+    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal) {
      button.disabled = false;
      buttonError.style.display = "none";
      document.location.href = "checkout-success.html";
