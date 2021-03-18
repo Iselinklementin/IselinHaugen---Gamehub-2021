@@ -54,15 +54,17 @@
       </nav>
   </header>
     <main class="background" id="main">
+      <form>
       <div class="grid">
 
-        <div class="headline-background"></div>
+        <div class="headline-background">
+          <div class="error-button">Please fill out required fields</div>
+        </div>
       <h1 class="headline">Checkout</h1>
 
       <!-- CONTACT INFO -->
-
       <section class="contact">
-      <form method="POST">
+      <div class="form">
         <fieldset class="contact-field">
           <legend>Contact info</legend>
 
@@ -85,13 +87,13 @@
           <!--           <label for="phone">Phone number</label>
           <input type="phone" name="phone" id="phone" class="form-input" placeholder="Phone number"/> -->
         </fieldset>
-      </form>
+      </div>
       </section>
 
       <!-- ADDRESS -->
 
       <section class="address">
-      <form method="POST">
+      <div class="form">
         <fieldset>
           <legend>Address</legend>
 
@@ -117,41 +119,57 @@
         </label>
 
         </fieldset>
-      </form>
+      </div>
     </section>
 
       <!-- DELIVERY-->
+    
 
     <section class="delivery">
-      <form method="POST">
+      <div class="form">
         <fieldset>
           <legend>Delivery method</legend>
 
           <div class="radio-wrap">
-          <label class="radio-container"><span class="radio-text">Pick-up point</span><input type="radio" name="delivery" value="pickup"><span class="hub-radio"></span></label>
-          <label class="radio-container"><span class="radio-text">Home address</span><input type="radio" name="delivery" value="homeaddress"><span class="hub-radio"></span></label>
-          <label class="radio-container"><span class="radio-text">Shipment</span><input type="radio" name="delivery" value="ship"><span class="hub-radio"></span></label>
-        </div>
+          <label class="radio-container">
+            <span class="radio-text">Pick-up point</span><input type="radio" name="delivery" value="pickup"><span class="hub-radio"></span>
+          </label>
+          <label class="radio-container">
+            <span class="radio-text">Home address</span><input type="radio" name="delivery" value="homeaddress"><span class="hub-radio"></span>
+         </label>
+         <div class="radio-error delivery-error error"><i class="fas fa-exclamation-triangle"></i>Please choose a delivery method</div>
 
+ <!--         <div class="radio-error" id="home-error"><i class="fas fa-exclamation-triangle"></i></div>
+         <div class="radio-error" id="pickup-error"><i class="fas fa-exclamation-triangle"></i></div> -->
+          <!--      <label class="radio-container"><span class="radio-text">Shipment</span><input type="radio" name="delivery" value="ship"><span class="hub-radio"></span></label> -->
+        </div>
+      
         </fieldset>
-      </form>
+      </div>
     </section>
 
        <!-- PAYMENT -->
    
     <section class="payment">
-      <form method="POST">     
+      <div class="form">     
         <fieldset>
           <legend>Payment</legend>
 
           <div class="radio-wrap">
-          <label class="radio-container radio-pay"><span class="radio-text">Klarna - Pay in 14 days</span><input type="radio" class="pay-klarna" name="payment" value="klarna" aria-required="true"><span class="hub-radio"></span></label>
-          <label class="radio-container radio-pay"><span class="radio-text">MasterCard / Credit</span><input type="radio" class="pay-master" name="payment" value="credit" aria-required="true"><span class="hub-radio"></span></label>
-          <label class="radio-container radio-pay"><span class="radio-text">Pay monthly</span><input type="radio" class="pay-monthly" name="payment" value="monthly" aria-required="true"><span class="hub-radio"></span></label>
+          <label class="radio-container radio-pay"><span class="radio-text">Klarna - Pay in 14 days</span><input type="radio" class="pay-klarna" name="payment" value="klarna" aria-required="true"><span class="hub-radio"></span>
+          </label>
+          <label class="radio-container radio-pay"><span class="radio-text">MasterCard / Credit</span><input type="radio" class="pay-master" name="payment" value="credit" aria-required="true"><span class="hub-radio"></span>
+          </label>
+          <label class="radio-container radio-pay"><span class="radio-text">Pay monthly</span><input type="radio" class="pay-monthly" name="payment" value="monthly" aria-required="true"><span class="hub-radio"></span>
+          </label>
+          <div class="radio-error payment-error error"><i class="fas fa-exclamation-triangle"></i>Please choose a payment method</div>
+<!--           <div class="radio-error" id="klarna-error"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="radio-error" id="monthly-error"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="radio-error" id="mastercard-error"><i class="fas fa-exclamation-triangle"></i></div> -->
         </div>
 
         </fieldset>
-      </form>
+      </div>
     </section>
 
       <!-- SUMMERY -->
@@ -188,12 +206,13 @@
         <div class="container-subtotal">
           <h2><strong>Sub-total</strong></h2>
           <p class="price" id="subtotal">NOK 699</p>
-          <button type="submit" class="button button-blue">Purchase</a>
+          <a role="button" type="submit" class="button button-blue">Purchase</a>
           </div>
         </section>
       </section>
       </div>
     </div>
+  </form>
     </main>
 
     <footer>

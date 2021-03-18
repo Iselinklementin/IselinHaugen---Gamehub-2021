@@ -1,25 +1,5 @@
-/* <i class="far fa-check-circle"></i> 
-<i class="far fa-times-circle"></i> 
-<i class="fas fa-exclamation-triangle"></i> */
-
-
-// const check = document.createElement("i")
-// check.className = "far fa-check-circle"
-
-// const fail = document.createElement("i");
-// fail.className = "far fa-times-circle";
-
-// const check = document.querySelector(".fa-check-circle")
-// const nameLabel = document.querySelector(".name")
-
-// const emailLabel = document.querySelector(".email");
-// const triangle = document.querySelector(".fa-exclamation-triangle");
-
-// const test = document.querySelector("h1")
-
 const form = document.querySelectorAll("form");
-const button = document.querySelector("button");
-
+const button = document.querySelector(".button");
 
 const email = document.querySelector("#email");
 const street = document.querySelector("#street");
@@ -33,19 +13,29 @@ const emailError = document.querySelector("#email-error");
 const streetError = document.querySelector("#street-error");
 const postalError = document.querySelector("#postal-error");
 const stateError = document.querySelector("#state-error");
+const buttonError = document.querySelector(".error-button");
 
-// const radioPayment = document.querySelectorAll(".radio-pay")
+const deliver = document.querySelectorAll(`input[name="delivery"]`)
+const pay = document.querySelectorAll(`input[name="payment"]`);
 
-// function checkButton() {
-// console.log("works")
-// }
-// checkButton();
 
-function validate() {
+function validateEmail(email) {
+    const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const patternMatches = regEx.test(email);
+    return patternMatches
+};
 
-    // event.preventDefault();
-      
-    if (required(fullName.value)) {
+function checkLength(value, len) {
+    if (value.trim().length < len) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+fullName.addEventListener("input", function() {
+    if (checkLength(fullName.value, 4)) {
         nameInput.style.borderColor = "red";
         nameError.style.display = "block";
         // nameLabel.after(fail);
@@ -55,7 +45,9 @@ function validate() {
         // check.style.display = "initial"
         // nameLabel.appendChild(check);
     }
+});
 
+email.addEventListener("input", function() {
     if (validateEmail(email.value)) {
         email.style.borderColor = "rgb(42, 179, 42)";
         emailError.style.display = "none";
@@ -65,155 +57,106 @@ function validate() {
         emailError.style.display = "block";
         // email.appendChild(fail);
     }
-    
-    if (required(street.value)) {
+});
+
+street.addEventListener("input", function() {
+    if (checkLength(street.value, 5)) {
         street.style.borderColor = "red";
         streetError.style.display = "block";
     } else {
         street.style.borderColor = "rgb(42, 179, 42)";
         streetError.style.display = "none";
     }
+});
 
-    if (required(state.value)) {
+state.addEventListener("input", function() {
+    if (checkLength(state.value, 1)) {
         state.style.borderColor = "red";
         stateError.style.display = "block";
     } else {
         state.style.borderColor = "rgb(42, 179, 42)";
         stateError.style.display = "none";
     }
+});
 
-    if (required(postal.value)) {
+postal.addEventListener("input", function() {
+    if (checkLength(postal.value, 4)) {
         postal.style.borderColor = "red";
         postalError.style.display = "block";
     } else {
         postal.style.borderColor = "rgb(42, 179, 42)";
         postalError.style.display = "none";
     }
+});
 
-    if (!required(fullName.value) && validateEmail(email.value) && !required(street.value) && !required(state.value) && !required(postal.value)) {
-        button.disabled = false;
-        button.innerHTML += "yay"
-    } else {
-        button.disabled = true;
-    }
+/* function radioDelivery() {} */
 
-}
-
-
-const checkPayment = document.querySelectorAll(`input[name="payment"]`);
-
-let value;
-
-function checkRadioPayment() {
-
-    for (let i = 0; i < checkPayment.length; i++) {
-
-        let radioPay = checkPayment[i];
-
-        console.log(radioPay);
-        console.log(radioPay.checked)
-
-        if (checkPayment[i].checked) {
-            value = radioPay.value;
-            console.log(this)
+    deliver.forEach(del => del.addEventListener("click", function () {
+    
+        let delValue;
+    
+        if (del.checked) {
+    
+            delValue = del.value;
+    
+            if (!delValue) {
+                deliveryError.style.display = "block";
+                return false;
+            } else {
+                deliveryError.style.display = "none";
+                return true;
+            }
         }
-    }
-}
-
-checkRadioPayment();
-
-function required(input) {
-    if (input.trim().length === 0) {
-        return true;
-    } else {
-        return false;
-    }
- }
-
-validate();
-
-fullName.addEventListener("keyup", validate);
-email.addEventListener("keyup", validate);
-street.addEventListener("keyup", validate);
-postal.addEventListener("keyup", validate);
-state.addEventListener("keyup", validate);
+    }));
 
 
-function validateEmail(email) {
-    const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const patternMatches = regEx.test(email);
-    return patternMatches
-};
+
+const deliveryError = document.querySelector(".delivery-error");
+const payError = document.querySelector(".payment-error");
+
+pay.forEach(p => p.addEventListener("click", function() {
+
+    let payValue;
+
+    if (p.checked) {
+        payValue = p.value;
+
+        if (!payValue) {
+            payError.style.display = "block";
+            return false;
+        } else {
+            payError.style.display = "none";
+            return true;
+        }
+    } 
+}));
 
 
 function submitForm(event) {
     event.preventDefault();
-    message.style.display = "block";
-    message.innerHTML += `<p>Your information has been sent<p>`;
-    // button.disabled = true;
-    form.reset();
-}
 
-button.addEventListener("submit", submitForm);
+    let mailVal = validateEmail(email.value);
+    let nameVal = checkLength(fullName.value, 4);
+    let streetVal = checkLength(street.value, 5);
+    let stateVal = checkLength(state.value, 1);
+    let postVal = checkLength(postal.value, 4);
 
+    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal && deliver && pay) {
+     button.disabled = false;
+     buttonError.style.display = "none";
+     document.location.href = "checkout-success.html";
+    } else {
+     button.disabled = true;
+     buttonError.style.display = "block";
+ }
+  /*    form.reset(); */
+ };
 
-
-// function submitForm(event) {
-//     event.preventDefault();
-// /*     message.style.display = "block";
-//     message.innerHTML += `<p>Your information has been sent<p>`; */
-//     // button.disabled = true;
-//     form.reset();
-// }
-
-// submitForm();
-
-// for (let i = 0; i < form.length; i++) {
-//     // event.preventDefault();
-//     form.addEventListener("submit", submitForm);
-// }
-
-// function checkButton() {
-//     if (button.disabled) {
-//         button.backgroundColor = "yellow"
-//     }
-// }
-
-//     if (formInput) {
-//         button.disabled = false;
-//     } else {
-//         button.disabled = true;
-//     }
-// }
+ button.addEventListener("click", submitForm);
 
 
-
-
-
-
-// checkPayment.addEventListener("keyup", checkRadioPayment);
-
-
-    //     if(radioPay.checked) {
-    //         console.log("radio worked")
-    //         console.log(radioPay.value)
-    //         value = radioPay.value;
-    //     }
-    // }
-
-    // function atLeastOneRadio() {
-    //     console.log("huh")
-    //     return ($('input[type=radio]:checked').size() > 0);
-    // }
-
-    // atLeastOneRadio();
-
-    // if(document.getElementById('input[class="pay-klarna"]:checked')) {
-    //     console.log("Klarna radio button is checked")
-    //     Male radio button is checked
-    //   } else if(document.getElementById('pay-master').checked) {
-    //     console.log("Mastercard radio button is checked")
-    //     Female radio button is checked
-    //   } else if (document.getElementById('pay-monthly').checked)
-    //     console.log("Monthly radio button is checked")
-    // }
+/* const pickupError = document.querySelector("#pickup-error");
+const homeError = document.querySelector("#home-error");
+const klarnaError = document.querySelector("#klarna-error");
+const masterError = document.querySelector("#mastercard-error");
+const monthlyError = document.querySelector("#monthly-error"); */

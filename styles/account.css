@@ -32,14 +32,24 @@ h2 {
   width: 320px;
 }
 
+.links-header {
+  display: flex;
+  margin: 0 3rem 0.6rem 3rem;
+  justify-content: end;
+}
+
 .log-out {
+  padding-left: 20px;
+}
+
+/* .log-out {
   max-width: 340px;
   display: block;
   margin: auto;
   text-align: right;
   padding: 1rem 0;
 }
-
+ */
 /* CUSTOMER INFO */
 
 .account-wrap {
@@ -128,6 +138,7 @@ legend {
 
 ul.group-link {
   padding: 0.8rem 0;
+  list-style: none;
 }
 
 /* SALE SEARCH BOX */
@@ -242,9 +253,9 @@ tr {
     margin: auto;
   }
 
-  .log-out {
+  /*  .log-out {
     margin-right: 3rem;
-  }
+  } */
 
   /* CUSTOMER INFO */
 
