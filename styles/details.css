@@ -105,12 +105,12 @@ h1 {
 .platform {
   display: flex;
   align-items: center;
-  justify-content: space-between; /*//////////////// NEW */
+  justify-content: space-between; /*//////////////// DONEODONEONDONEONDE */
 }
 
 .platform span {
   margin-right: 20px;
-  display: none; /*//////////////// NEW */
+  display: none; /*//////////////// DNIODNODNOE */
 }
 
 /* ----------- */
@@ -120,7 +120,7 @@ h1 {
   align-items: center;
   text-align: center;
   margin: 1rem auto;
-  width: 280px; /*//////////////// NEW */
+  width: 280px; /*//////////////// DONDONDOEONDOE */
 }
 
 .ratings-box {
@@ -134,7 +134,7 @@ h1 {
 .recommended {
   display: flex;
   width: 100%;
-  flex-direction: column; /*//////////////// NEW */
+  flex-direction: column; /*//////////////// DIODOENDONEODNE */
 }
 
 /* .recommended p {     
@@ -253,14 +253,22 @@ h3 {
   .flex-platform-release {
     justify-content: space-between;
   }
+
+  .platform {
+    justify-content: center;
+  }
 }
 
 @media only screen and (min-width: 890px) {
+  .container {
+    margin-top: 1rem;
+  }
   .rate {
     display: flex;
     align-items: center;
     text-align: center;
     margin: 1rem auto;
+    width: 100%;
   }
 
   .ratings-box {
@@ -274,6 +282,17 @@ h3 {
   .recommended {
     display: flex;
     width: 100%;
+    flex-direction: row;
+  }
+
+  .platform span {
+    display: initial;
+  }
+
+  .intro-heading {
+    width: 50%;
+    padding: 0 3rem 0 1.5rem;
+    text-align: left;
   }
 }
 
@@ -284,6 +303,24 @@ h3 {
     /*     margin-left: 2rem; */
   }
 
+  .img-details-info-wrap {
+    width: 50%;
+    height: 1000px;
+    padding: 1rem;
+  }
+
+  .img-header {
+    height: 55%;
+  }
+
+  .flex-platform-release {
+    flex-direction: row;
+  }
+
+  /* #buy {
+    margin: 3rem 0;
+  }
+ */
   /* vurder plass */
 
   /* 
