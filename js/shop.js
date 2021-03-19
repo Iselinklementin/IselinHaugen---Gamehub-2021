@@ -60,34 +60,29 @@
   const box = document.querySelector(".nintendo-box");
   const platNameNintendo = document.querySelector(".plat-name-nintendo");
   const nintendoIcon = document.querySelector(".nintendo-gamepad");
+  let valueCountNintendo = 1;
+  let valueCountPC = 1;
+  let valueCountXbox = 1;
+  let valueCountPs = 1;
+  
 
-  nintendo.addEventListener("click", (event) => {
-
-    console.log(event.target)
-    box.style.backgroundColor = "var(--primary-color)";
-    // box.style.height = "68px";
-    platNameNintendo.style.backgroundColor = "black"; 
-    platNameNintendo.style.color = "white";
-    // platNameNintendo.style.height = "22px";
-    // platNameNintendo.style.lineHeight = "1.5";
-    nintendoIcon.src = "/images/icons/nintendo-black.svg";
-    // event.target.style.background = "pink";
+  nintendo.addEventListener("click", function () {
+      console.log(valueCountNintendo)
+      valueCountNintendo++;
+      box.style.backgroundColor = "black";
+      platNameNintendo.style.backgroundColor = "var(--primary-color";
+      platNameNintendo.style.color = "black";
+      nintendoIcon.src = "/images/icons/nintendo.svg"; 
+      
+      if (valueCountNintendo % 2 === 0) {
+        box.style.backgroundColor = "var(--primary-color)";
+        platNameNintendo.style.backgroundColor = "black"; 
+        platNameNintendo.style.color = "white";
+        nintendoIcon.src = "/images/icons/nintendo-black.svg";
+      }
   }, true); 
 
-  nintendo.addEventListener("dblclick", (event) => {
-    box.style.backgroundColor = "black";
-    platNameNintendo.style.backgroundColor = "var(--primary-color";
-    platNameNintendo.style.color = "black";
-    nintendoIcon.src = "/images/icons/nintendo.svg";
-  }, true);
-
-  // nintendoFilter.onblur = function() {
-  //   box.style.backgroundColor = "black";
-  // }
-
-
    //////////  PC  ////////
-
 
    const pc = document.querySelector(".pc-filter");
    const pcBox = document.querySelector(".pc-box");
@@ -96,27 +91,23 @@
   
     pc.addEventListener("click", (event) => {
 
-      console.log(event.target)
-      pcBox.style.backgroundColor = "var(--primary-color)";
-      // box.style.height = "68px";
-      platNamePC.style.backgroundColor = "black"; 
-      platNamePC.style.color = "white";
-      // platNameNintendo.style.height = "22px";
-      // platNameNintendo.style.lineHeight = "1.5";
-      pcIcon.src = "/images/icons/pc-black.svg";
-      // event.target.style.background = "pink";
-    }, true); 
-  
-      pc.addEventListener("dblclick", (event) => {
+      valueCountPC++;
+
       pcBox.style.backgroundColor = "black";
       platNamePC.style.backgroundColor = "var(--primary-color";
       platNamePC.style.color = "black";
       pcIcon.src = "/images/icons/pc.svg";
-    }, true);
 
+      if (valueCountPC % 2 === 0) {
+ /*      console.log(event.target) */
+      pcBox.style.backgroundColor = "var(--primary-color)";
+      platNamePC.style.backgroundColor = "black"; 
+      platNamePC.style.color = "white";
+      pcIcon.src = "/images/icons/pc-black.svg";
+    }}, true); 
+  
 
    //////////  XBOX ////////
-
 
    const xbox = document.querySelector(".xbox-filter");
    const xboxBox = document.querySelector(".xbox-box");
@@ -125,23 +116,19 @@
 
    xbox.addEventListener("click", (event) => {
 
-    console.log(event.target)
-    xboxBox.style.backgroundColor = "var(--primary-color)";
-    // box.style.height = "68px";
-    platNameXbox.style.backgroundColor = "black"; 
-    platNameXbox.style.color = "white";
-    // platNameNintendo.style.height = "22px";
-    // platNameNintendo.style.lineHeight = "1.5";
-    xboxIcon.src = "/images/icons/xbox-black.svg";
-    // event.target.style.background = "pink";
-  }, true); 
+    valueCountXbox++;
 
-  xbox.addEventListener("dblclick", (event) => {
     xboxBox.style.backgroundColor = "black";
     platNameXbox.style.backgroundColor = "var(--primary-color";
     platNameXbox.style.color = "black";
     xboxIcon.src = "/images/icons/xbox.svg";
-  }, true);
+
+    if (valueCountXbox % 2 === 0) {
+    xboxBox.style.backgroundColor = "var(--primary-color)";
+    platNameXbox.style.backgroundColor = "black"; 
+    platNameXbox.style.color = "white";
+    xboxIcon.src = "/images/icons/xbox-black.svg";
+  }}, true); 
 
   //////////  PLAYSTATION   ////////
 
@@ -152,26 +139,22 @@
 
   ps.addEventListener("click", (event) => {
 
-   console.log(event.target)
-   psBox.style.backgroundColor = "var(--primary-color)";
-   // box.style.height = "68px";
-   platNamePs.style.backgroundColor = "black"; 
-   platNamePs.style.color = "white";
-   // platNameNintendo.style.height = "22px";
-   // platNameNintendo.style.lineHeight = "1.5";
-   psIcon.src = "/images/icons/ps-black.svg";
-   // event.target.style.background = "pink";
- }, true); 
+    valueCountPs++;
 
-  ps.addEventListener("dblclick", (event) => {
-   psBox.style.backgroundColor = "black";
-   platNamePs.style.backgroundColor = "var(--primary-color";
-   platNamePs.style.color = "black";
-   psIcon.src = "/images/icons/ps.svg";
- }, true);
+    psBox.style.backgroundColor = "black";
+    platNamePs.style.backgroundColor = "var(--primary-color";
+    platNamePs.style.color = "black";
+    psIcon.src = "/images/icons/ps.svg";
+
+    if (valueCountPs % 2 === 0) {
+    psBox.style.backgroundColor = "var(--primary-color)";
+    platNamePs.style.backgroundColor = "black"; 
+    platNamePs.style.color = "white";
+    psIcon.src = "/images/icons/ps-black.svg";
+ }}, true); 
 
 
- const cartImg = document.querySelector(".cartImg");
+const cartImg = document.querySelector(".cartImg");
 const cartInfo = document.querySelector(".cartInfo")
 
 function gameInCart () {

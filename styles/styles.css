@@ -247,9 +247,9 @@ h2 {
 
 .modal {
   position: fixed;
-  height: 50%;
+  height: 60%;
   width: 60%;
-  top: 30%;
+  top: 20%;
   left: 20%;
   right: 20%;
   /* bottom: 0; */
@@ -264,7 +264,7 @@ h2 {
   transition: all 0.35s ease-in;
 }
 
-.buttons-container {
+.buttons-container-modal {
   display: flex;
   justify-content: space-between;
   width: 450px;
@@ -304,6 +304,7 @@ h2 {
   min-height: 40px;
   max-height: 80px;
   height: 100%;
+  width: 100%;
 }
 
 .modal-header {
@@ -354,8 +355,8 @@ h2 {
 
 .imgCart {
   width: 170px;
-  height: 115px;
-  object-position: top;
+  height: 185px;
+  object-position: center;
   object-fit: cover;
 }
 

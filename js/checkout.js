@@ -16,7 +16,9 @@ const stateError = document.querySelector("#state-error");
 const buttonError = document.querySelector(".error-button");
 
 const deliver = document.querySelectorAll(`input[name="delivery"]`)
-const pay = document.querySelectorAll(`input[name="payment"]`);
+const pay = document.querySelectorAll(".pay-button");
+const deliveryError = document.querySelector(".delivery-error");
+const payError = document.querySelector(".payment-error");
 
 
 function validateEmail(email) {
@@ -33,17 +35,95 @@ function checkLength(value, len) {
     }
 }
 
+function validateForm(event) {
+    event.preventDefault();
 
+    const deliver = document.querySelectorAll(`input[name="delivery"]`)
+    const pay = document.querySelectorAll(".pay-button");
+
+    if (checkLength(fullName.value, 4)) {
+        nameInput.style.borderColor = "red";
+        nameError.style.display = "block";
+    } else {
+        nameInput.style.borderColor = "rgb(42, 179, 42)";
+        nameError.style.display = "none";
+    }
+
+    if (validateEmail(email.value)) {
+        email.style.borderColor = "rgb(42, 179, 42)";
+        emailError.style.display = "none";
+    } else {
+        email.style.borderColor = "red";
+        emailError.style.display = "block";
+    }
+
+    if (checkLength(street.value, 5)) {
+        street.style.borderColor = "red";
+        streetError.style.display = "block";
+    } else {
+        street.style.borderColor = "rgb(42, 179, 42)";
+        streetError.style.display = "none";
+    }
+
+    if (checkLength(state.value, 1)) {
+        state.style.borderColor = "red";
+        stateError.style.display = "block";
+    } else {
+        state.style.borderColor = "rgb(42, 179, 42)";
+        stateError.style.display = "none";
+    }
+
+    if (checkLength(postal.value, 4)) {
+        postal.style.borderColor = "red";
+        postalError.style.display = "block";
+    } else {
+        postal.style.borderColor = "rgb(42, 179, 42)";
+        postalError.style.display = "none";
+    }
+
+    function checked() {
+
+        for (let i = 0; i < deliver.length; i++) {
+            if (deliver[0].checked || deliver[1].checked) {
+                deliveryError.style.display = "none";
+                console.log("checked delivery")
+                return true;
+            }  else {
+                deliveryError.style.display = "block";
+                console.log("not checked delivery")
+                return false;
+            }
+        }
+
+    }
+
+    checked();
+
+    for (let i = 0; i < pay.length; i++) {
+
+        if (pay[0].checked || pay[1].checked || pay[2].checked ) {
+            payError.style.display = "none";
+            console.log("checked")
+            return true;
+        } else {
+            payError.style.display = "block";
+            console.log("not checked")
+            return false;
+        } 
+    }
+};
+
+console.log(pay.length)
+console.log(deliver.length)
+
+/* 
 fullName.addEventListener("input", function() {
     if (checkLength(fullName.value, 4)) {
         nameInput.style.borderColor = "red";
         nameError.style.display = "block";
-        // nameLabel.after(fail);
     } else {
         nameInput.style.borderColor = "rgb(42, 179, 42)";
         nameError.style.display = "none";
-        // check.style.display = "initial"
-        // nameLabel.appendChild(check);
     }
 });
 
@@ -51,11 +131,9 @@ email.addEventListener("input", function() {
     if (validateEmail(email.value)) {
         email.style.borderColor = "rgb(42, 179, 42)";
         emailError.style.display = "none";
-        // emailLabel.after(check);
     } else {
         email.style.borderColor = "red";
         emailError.style.display = "block";
-        // email.appendChild(fail);
     }
 });
 
@@ -89,7 +167,6 @@ postal.addEventListener("input", function() {
     }
 });
 
-/* function radioDelivery() {} */
 
     deliver.forEach(del => del.addEventListener("click", function () {
     
@@ -109,47 +186,19 @@ postal.addEventListener("input", function() {
         }
     }));
 
-/*     function deliverVal () {
-
-for (let i = 0; i < deliver.length; i++) {
-    console.log(deliver[i])
-    if (deliver[i].checked) {
-        deliveryError.style.display = "none";
-                return true;
-    } else {
-        deliveryError.style.display = "block";
-        return false;
-    }
-} */
-
-
-/* function checkLength(value, len) {
-    if (value.trim().length > len) {
-        return true;
-    } else {
-        return false;
-    }
-}  */
-
-const deliveryError = document.querySelector(".delivery-error");
-const payError = document.querySelector(".payment-error");
-
 pay.forEach(p => p.addEventListener("click", function() {
 
     let payValue;
 
     if (p.checked) {
         payValue = p.value;
-
-        if (!payValue) {
-            payError.style.display = "block";
-            return false;
-        } else {
-            payError.style.display = "none";
-            return true;
-        }
+        payError.style.display = "none";
+        console.log("checked")
+    } else {
+        payError.style.display = "block";
+        console.log("not checked")
     } 
-}));
+})); */
 
 
 function submitForm(event) {
@@ -161,7 +210,7 @@ function submitForm(event) {
     let stateVal = checkLength(state.value, 1);
     let postVal = checkLength(postal.value, 4);
 
-    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal) {
+    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal && pay && deliver) {
      button.disabled = false;
      buttonError.style.display = "none";
      document.location.href = "checkout-success.html";
@@ -173,10 +222,5 @@ function submitForm(event) {
  };
 
  button.addEventListener("click", submitForm);
+ button.addEventListener("click", validateForm);
 
-
-/* const pickupError = document.querySelector("#pickup-error");
-const homeError = document.querySelector("#home-error");
-const klarnaError = document.querySelector("#klarna-error");
-const masterError = document.querySelector("#mastercard-error");
-const monthlyError = document.querySelector("#monthly-error"); */

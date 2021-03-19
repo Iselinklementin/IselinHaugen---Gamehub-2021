@@ -42,7 +42,6 @@ password.addEventListener("keyup", function() {
         password.style.borderColor = "rgb(42, 179, 42)";
         pswError.style.display = "none";
 
-        
         if (buttonError.style.display = "block") {
             buttonError.style.display = "none"
         }

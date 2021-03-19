@@ -73,16 +73,52 @@
         <li><a href="pre-purchase.html" aria-current="location"><strong>Product name</strong></a></li>
       </ol>
 
+              <!-- MODAL WINDOW -->
+
+
+
+              <div class="modal" id="modal1">
+                <div class="modal-dialog">
+          
+                  <div class="modal-header" id="header-modal">
+                    <h3 class="modal-header-text"> 🏆 SUCCESS! 🏆 </h3>
+                  </div>
+          
+                  <section class="modal-content">
+      
+                    <p><span>Excellent choice!</span><br>
+                    Your item has been added to the cart.</p>
+      
+                    <section class="cartItems">
+                      <div class="cartImg"></div>
+                      <div class="cartInfo"></div>
+                    </section>
+      
+                    <div class="buttons-container-modal">
+                    <a role="button" class="close-modal button" id="modal-button" data-close>Continue shopping</a>
+                    <a href="shopping-cart.html" class="button button-blue modal-button">Go to cart</a>
+                    </div>
+      
+                  </section>
+      
+                </div>
+              </div>
+          
+          
+          
+              <!-- END -->
+
       <div class="heading-container">
         
         <!-- INTRO & BUTTONS -->
 
         <section>
         <h1>An untold <br> chapter of <br><span class="immortal">immortal</span></h1>
-        <form class="group-buttons">
-          <button class="button" type="submit"><a href="shopping-cart.html">Pre-purchase</a></button>
+        <div class="group-buttons">
+          <a class="button open-modal" id="buy" data-open="modal1">Add to cart</a>
+  <!--         <a class="button" type="submit" href="shopping-cart.html">Pre-purchase</a> -->
           <a href="404.html" class="button button-blue">Watch trailer</a>
-        </form>
+        </div>
     </section>
 
     <!-- GAME INFO + TEXT -->
@@ -125,7 +161,7 @@
 
 <div class="buy">
   <div class="input-illustration"></div>
-  <button class="button btn" type="submit">Pre-purchase</button>
+  <a class="button open-modal btn" id="buy" data-open="modal1">Add to cart</a>
 </div>
 
 <section class="info-text">
@@ -215,6 +251,7 @@
       </section>
     </div>
 
+
     </main>
     <footer>
       <img class="footer-logo" src="/images/icons/logo.svg" alt="Gamehub logo"/>
@@ -242,5 +279,6 @@
       </ul>
     </footer>
     <script src="js/prepurchase.js"></script>
+    <script src="js/components.js"></script>
   </body>
 </html>

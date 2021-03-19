@@ -65,16 +65,23 @@ h2 {
 
 /* IMAGE EFFECT */
 
+.games-java:hover,
+.overwatch:hover,
+.gallery-bottom:hover,
+.gamehover:hover {
+  filter: brightness(115%);
+}
+/* 
 .gamehover:hover,
 .gallery-top:hover,
 .gallery-bottom:hover,
 .overwatch:hover {
-  background: linear-gradient(
+   background: linear-gradient(
     rgba(255, 255, 255, 0.082),
     rgba(255, 255, 255, 0.116)
-  );
+  ); 
   border: rgba(6, 5, 5, 0) solid thin;
-}
+}*/
 
 /* ICONS IN HEADER-IMAGE */
 
@@ -150,9 +157,9 @@ h2 {
   margin: 12px;
   max-width: 150px;
   margin-top: 0;
-  padding-top: 5px;
+  /*   padding-top: 5px; */
   cursor: pointer;
-  background-color: rgba(52, 52, 54, 0.445);
+  /*   background-color: rgba(52, 52, 54, 0.445); */
 }
 
 .text-wrapper {
