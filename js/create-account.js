@@ -3,11 +3,13 @@ const button = document.querySelector("#submit");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const matchPsw = document.querySelector("#confirm-password");
+const agree = document.querySelector("#agreed");
 
 const emailError = document.querySelector("#email-error");
 const passwordError = document.querySelector("#password-error");
 const matchError = document.querySelector("#match-error");
 const buttonError = document.querySelector(".error-button")
+const checkError = document.querySelector("#check-error");
 
 
 function validateForm(event) {
@@ -16,10 +18,12 @@ function validateForm(event) {
     if (validateEmail(email.value)) {
         email.style.borderColor = "rgb(42, 179, 42)";
         emailError.style.display = "none";
+        /* emailError.innerHTML = `<i class="fas fa-check-circle"></i>` */
 
         if (buttonError.style.display = "block") {
               buttonError.style.display = "none"
         } 
+        
     } else {
         email.style.borderColor = "red";
         emailError.style.display = "block";
@@ -28,6 +32,7 @@ function validateForm(event) {
     if (isPasswordSecure(password.value)) {
         password.style.borderColor = "rgb(42, 179, 42)";
         passwordError.style.display = "none";
+        /* passwordError.innerHTML = `<i class="fas fa-check-circle"></i>` */
 
         if (buttonError.style.display = "block") {
             buttonError.style.display = "none"
@@ -41,27 +46,37 @@ function validateForm(event) {
     if (matchPsw.value === password.value && matchPsw.value !== "") {
         matchPsw.style.borderColor = "rgb(42, 179, 42)";
         matchError.style.display = "none";
+        /* matchPsw.innerHTML = `<i class="fas fa-check-circle"></i>` */
 
     } else {
         matchPsw.style.borderColor = "red";
         matchError.style.display = "block";
+    }
+
+    if (agree.checked) {
+        checkError.style.display = "none";
+        /* checkError.innerHTML = `<i class="fas fa-check-circle"></i>` */
+        console.log("checked")
+    } else {
+        console.log("not checked")
+        checkError.style.display = "block";
     }
 }
 
 submit.addEventListener("click", validateForm);
 submit.addEventListener("click", submitForm);
 
-//2.function to run when the form is submitted
 function submitForm(event) {
 	event.preventDefault();
 	if (
-		validateEmail(email.value) && isPasswordSecure(password.value) && (matchPsw.value === password.value)) {
-        button.disabled = true;
-        buttonError.style.display = "block";
+		validateEmail(email.value) && isPasswordSecure(password.value) && (matchPsw.value === password.value) && (agree.checked)) {
+        button.disabled = false;
+        buttonError.style.display = "none";
+        document.location.href = "account.html";
 		form.reset();
 	} else {
-	    button.disabled = false;
-        buttonError.style.display = "none";
+        button.disabled = true;
+        buttonError.style.display = "block";
 	}
 }
 

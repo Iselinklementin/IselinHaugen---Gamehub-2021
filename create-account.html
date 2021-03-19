@@ -91,27 +91,28 @@
 
           <label for="email">
             <div class="label-wrap">Email <span class="include">Please enter a valid email address</span> 
-            <div class="error" id="email-error"><i class="fas fa-exclamation-triangle"></i>Enter a valid email address</div></div>
+            <div class="error" id="email-error"><i class="fas fa-exclamation-triangle"></i></div></div>
             <input type="text" name="email" id="email" class="form-input" placeholder="Email"/>
           </label>
 
           <label for="password">
             <div class="label-wrap">Password <span class="include">Must include uppercase and lowercase</span> 
-            <div class="error" id="password-error"><i class="fas fa-exclamation-triangle"></i>Too few characters</div></div>
+            <div class="error" id="password-error"><i class="fas fa-exclamation-triangle"></i></div></div>
             <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
           </label>
 
           <label for="confirm-password">
             <div class="label-wrap">Confirm password <span class="include">Passwords need to match</span> 
-            <div class="error" id="match-error"><i class="fas fa-exclamation-triangle"></i>Password match</div></div>
+            <div class="error" id="match-error"><i class="fas fa-exclamation-triangle"></i></div></div>
             <input type="password" name="confirm-password" id="confirm-password" class="form-input" placeholder="Confirm password" required/>
           </label>
         
         </div>
 
         <div class="checkbox">
-          <input type="checkbox" />
-          <label class="agreement">I agree to the <a href="#">Registration Agreement <span class="privacy">and Privacy Policy.</span></a></label><br>
+          <div class="error" id="check-error"><i class="fas fa-exclamation-triangle"></i></div>
+          <input type="checkbox" value="privacy" id="agreed" />
+          <label class="agreement">I agree to the <a href="#">Registration Agreement <br> <span class="privacy">and Privacy Policy.</span></a></label><br>
           <input type="checkbox" />
           <label class="agreement">Send med latest news and discounts</label>
         </div>
