@@ -90,20 +90,20 @@
           <div class="fieldset-column">
 
           <label for="email">
-            <div class="label-wrap">Email
+            <div class="label-wrap">Email <span class="include">Please enter a valid email address</span> 
             <div class="error" id="email-error"><i class="fas fa-exclamation-triangle"></i>Enter a valid email address</div></div>
             <input type="text" name="email" id="email" class="form-input" placeholder="Email"/>
           </label>
 
           <label for="password">
-            <div class="label-wrap">Password
+            <div class="label-wrap">Password <span class="include">Must include uppercase and lowercase</span> 
             <div class="error" id="password-error"><i class="fas fa-exclamation-triangle"></i>Too few characters</div></div>
             <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
           </label>
 
           <label for="confirm-password">
-            <div class="label-wrap">Confirm password
-            <div class="error" id="password-error"><i class="fas fa-exclamation-triangle"></i>Password match</div></div>
+            <div class="label-wrap">Confirm password <span class="include">Passwords need to match</span> 
+            <div class="error" id="match-error"><i class="fas fa-exclamation-triangle"></i>Password match</div></div>
             <input type="password" name="confirm-password" id="confirm-password" class="form-input" placeholder="Confirm password" required/>
           </label>
         
@@ -117,7 +117,7 @@
         </div>
         
           <div class="error-button error">Please fill out required fields</div>
-          <a href="account.html" class="button">Create account</a> 
+          <a href="account.html" class="button" id="submit">Create account</a> 
           
         </fieldset>
       </form>
@@ -148,5 +148,6 @@
      
       </ul>
     </footer>
+    <script src="/js/create-account.js"></script>
   </body>
 </html>

@@ -59,7 +59,7 @@ function submitForm(event) {
     let psw = isPasswordSecure(password.value);
  
     if (mail && psw) {
-    button.disabled = false;
+     button.disabled = false;
      buttonError.style.display = "none";
      document.location.href = "account.html";
     } else {

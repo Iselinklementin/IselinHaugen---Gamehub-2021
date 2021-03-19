@@ -29,13 +29,22 @@ h1 {
   /*   height: 1100px; */
 }
 
+.include {
+  position: absolute;
+  top: 25px;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 .label-wrap {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .fa-exclamation-triangle {
-  color: rgb(221, 62, 62);
+  color: var(--primary-color);
   font-size: 1rem;
   padding-right: 10px;
 }
@@ -94,18 +103,18 @@ h1 {
   margin: auto;
   margin-top: 1.6rem;
 }
-/* 
+
 .error {
-  margin: 10px 0px;
   display: none;
+  /* 
   font-size: 0.9rem;
   color: rgb(221, 62, 62);
   background-color: white;
-  border: rgb(221, 62, 62) solid 2px;
-} */
+  border: rgb(221, 62, 62) solid 2px;*/
+}
 
 .error-button {
-  /* display: none; */
+  display: none;
   font-size: 0.9rem;
   color: rgb(221, 62, 62);
   background-color: white;
