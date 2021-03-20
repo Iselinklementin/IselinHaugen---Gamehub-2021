@@ -12,13 +12,11 @@ const buttonError = document.querySelector(".error-button")
 const checkError = document.querySelector("#check-error");
 
 
-function validateForm(event) {
-	event.preventDefault();
+function validateForm() {
 
     if (validateEmail(email.value)) {
         email.style.borderColor = "rgb(42, 179, 42)";
         emailError.style.display = "none";
-        /* emailError.innerHTML = `<i class="fas fa-check-circle"></i>` */
 
         if (buttonError.style.display = "block") {
               buttonError.style.display = "none"
@@ -32,7 +30,6 @@ function validateForm(event) {
     if (isPasswordSecure(password.value)) {
         password.style.borderColor = "rgb(42, 179, 42)";
         passwordError.style.display = "none";
-        /* passwordError.innerHTML = `<i class="fas fa-check-circle"></i>` */
 
         if (buttonError.style.display = "block") {
             buttonError.style.display = "none"
@@ -46,7 +43,6 @@ function validateForm(event) {
     if (matchPsw.value === password.value && matchPsw.value !== "") {
         matchPsw.style.borderColor = "rgb(42, 179, 42)";
         matchError.style.display = "none";
-        /* matchPsw.innerHTML = `<i class="fas fa-check-circle"></i>` */
 
     } else {
         matchPsw.style.borderColor = "red";
@@ -55,7 +51,6 @@ function validateForm(event) {
 
     if (agree.checked) {
         checkError.style.display = "none";
-        /* checkError.innerHTML = `<i class="fas fa-check-circle"></i>` */
         console.log("checked")
     } else {
         console.log("not checked")

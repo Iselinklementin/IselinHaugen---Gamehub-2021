@@ -35,7 +35,7 @@ function validateForm(event) {
     } else {
         email.style.borderColor = "red";
         emailError.style.display = "block";
-    }
+    };
 
     if (isPasswordSecure(password.value)) {
         password.style.borderColor = "rgb(42, 179, 42)";
@@ -47,9 +47,9 @@ function validateForm(event) {
     } else {
         password.style.borderColor = "red";
         pswError.style.display = "block";
-    }
+    };
 
-}
+};
 
 function submitForm(event) {
     event.preventDefault();

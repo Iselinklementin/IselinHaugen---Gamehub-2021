@@ -1,4 +1,4 @@
-  ////////// NINTENDO ////////
+  ////////// NINTENDO FILTER ////////
 
   const nintendo = document.querySelector(".nintendo-filter");
   const box = document.querySelector(".nintendo-box");
@@ -24,7 +24,7 @@
         platNameNintendo.style.color = "white";
         nintendoIcon.src = "/images/icons/nintendo-black.svg";
       }
-  }, true); 
+  }); 
 
    //////////  PC  ////////
 
@@ -33,7 +33,7 @@
    const platNamePC = document.querySelector(".plat-name-pc");
    const pcIcon = document.querySelector(".pc-mouse");
   
-    pc.addEventListener("click", (event) => {
+    pc.addEventListener("click", () => {
 
       valueCountPC++;
 
@@ -47,17 +47,17 @@
       platNamePC.style.backgroundColor = "black"; 
       platNamePC.style.color = "white";
       pcIcon.src = "/images/icons/pc-black.svg";
-    }}, true); 
+    }}); 
   
 
-   //////////  XBOX ////////
+   //////////  XBOX FILTER ////////
 
    const xbox = document.querySelector(".xbox-filter");
    const xboxBox = document.querySelector(".xbox-box");
    const platNameXbox = document.querySelector(".plat-name-xbox");
    const xboxIcon = document.querySelector(".xbox-gamepad");
 
-   xbox.addEventListener("click", (event) => {
+   xbox.addEventListener("click", () => {
 
     valueCountXbox++;
 
@@ -71,16 +71,16 @@
     platNameXbox.style.backgroundColor = "black"; 
     platNameXbox.style.color = "white";
     xboxIcon.src = "/images/icons/xbox-black.svg";
-  }}, true); 
+  }}); 
 
-  //////////  PLAYSTATION   ////////
+  //////////  PLAYSTATION FILTER ////////
 
   const ps = document.querySelector(".ps-filter");
   const psBox = document.querySelector(".ps-box");
   const platNamePs = document.querySelector(".plat-name-ps");
   const psIcon = document.querySelector(".ps-gamepad");
 
-  ps.addEventListener("click", (event) => {
+  ps.addEventListener("click", () => {
 
     valueCountPs++;
 
@@ -94,7 +94,7 @@
     platNamePs.style.backgroundColor = "black"; 
     platNamePs.style.color = "white";
     psIcon.src = "/images/icons/ps-black.svg";
- }}, true); 
+ }}); 
 
 
 const cartImg = document.querySelector(".cartImg");

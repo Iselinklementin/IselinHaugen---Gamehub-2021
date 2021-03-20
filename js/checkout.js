@@ -21,10 +21,9 @@ const deliveryError = document.querySelector(".delivery-error");
 const payError = document.querySelector(".payment-error");
 const req = document.querySelectorAll(".req");
 
-/* TEST sticky error */
+/* sticky error */
 
-stick =  
-buttonError.getBoundingClientRect().top + window.pageYOffset; 
+stick = buttonError.getBoundingClientRect().top + window.pageYOffset; 
 
 window.onscroll = function() { 
   
@@ -37,7 +36,6 @@ window.onscroll = function() {
     } 
 } 
 
-/* TEST */
 
 function validateEmail(email) {
     const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -53,8 +51,7 @@ function checkLength(value, len) {
     }
 }
 
-function validateForm(event) {
-    event.preventDefault();
+function validateForm() {
 
     const deliver = document.querySelectorAll(`input[name="delivery"]`)
     const pay = document.querySelectorAll(".pay-button");
@@ -155,7 +152,6 @@ function submitForm(event) {
      buttonError.style.display = "flex";
      required();
  }
-  /*    form.reset(); */
  };
 
  button.addEventListener("click", submitForm);

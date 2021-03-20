@@ -1,10 +1,10 @@
-const openConfirmation = document.querySelectorAll("[data-open]");
-const closeConfirmation = document.querySelectorAll("[data-close]");
+const openModal = document.querySelectorAll("[data-open]");
+const closeModal = document.querySelectorAll("[data-close]");
 const isVisible = "is-visible";
 const buyBtn = document.querySelectorAll("#buy");
  
-for(let i = 0; i < openConfirmation.length; i++) {
-  openConfirmation[i].addEventListener("click", function() {
+for(let i = 0; i < openModal.length; i++) {
+  openModal[i].addEventListener("click", function() {
     const modalId = this.dataset.open;
     document.getElementById(modalId).classList.add(isVisible);
   });
@@ -12,8 +12,8 @@ for(let i = 0; i < openConfirmation.length; i++) {
 
 let counter = 0;
 
-for (let i = 0; i < closeConfirmation.length; i++) {
-    closeConfirmation[i].addEventListener("click", function() {
+for (let i = 0; i < closeModal.length; i++) {
+    closeModal[i].addEventListener("click", function() {
       this.parentElement.parentElement.parentElement.parentElement.classList.remove(isVisible);
       
       setInterval(function() {
