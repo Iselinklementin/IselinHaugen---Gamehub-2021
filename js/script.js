@@ -18,7 +18,6 @@ async function getRAWG() {
         gamesTopContainer.innerHTML = "";
         console.log(errorMessage);
     } finally {
-
     }
 };
 

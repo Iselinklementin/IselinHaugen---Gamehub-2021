@@ -1,56 +1,21 @@
-const modal = document.querySelector("#modal1");
-const modalClass = "modal.is-visible";
+const modal = document.querySelector(".modal");
 const openModal = document.querySelectorAll("[data-open]");
 const closeModal = document.querySelectorAll("[data-close]");
-const isVisible = "is-visible";
 const buyBtn = document.querySelectorAll("#buy");
 
 // MODAL //
  
 for(let i = 0; i < openModal.length; i++) {
   openModal[i].addEventListener("click", function() {
-    modal.classList.add(isVisible);
+    modal.style.display = "flex";
   });
 };
-
-window.addEventListener("click", function(event) {
-
-  console.log(modalClass)
-  console.log(event.target)
-
-  if (event.target === modal.classList.contains(".modal.is-visible")) {
-    modal.classList.remove(isVisible);
-}
-}); 
-
-/* 
-
-.modal.is-visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-window.onclick = function(event) {
-  if (modal.classList.contains(".modal.is-visible")) {
-      modal.classList.remove(isVisible);
-  }
-}; */
-/* 
-window.onclick = function(event) {
-  if (event.target === modal) {
-      modal.style.display = "none";
-  }
-}
-
-modal.classList.contains(isVisible)
- */
-
 
 let counter = 0;
 
 for (let i = 0; i < closeModal.length; i++) {
     closeModal[i].addEventListener("click", function() {
-      modal.classList.remove(isVisible);
+      modal.style.display = "none";
       
       setInterval(function() {
         counter++;
@@ -69,6 +34,14 @@ for (let i = 0; i < closeModal.length; i++) {
     });
   };
 
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      console.log(event.target)
+        modal.style.display = "none";
+    }
+  }
+  
    // ADDED TO CART BUTTONS //
 
   buyBtn.forEach(btn => {

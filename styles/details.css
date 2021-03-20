@@ -119,8 +119,12 @@ h1 {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 1rem auto;
+  margin: 2rem auto 1rem auto; /* NEW */
   width: 280px;
+}
+
+.rating {
+  margin-top: 8rem;
 }
 
 .ratings-box {
@@ -199,6 +203,13 @@ h3 {
   margin: 3rem auto;
 }
 
+#buy-extra {
+  margin: 6rem auto 2rem auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
 .recommended-box {
   padding: 5px 10px;
   color: black;
@@ -253,10 +264,16 @@ h3 {
 
   .flex-platform-release {
     justify-content: space-between;
+    width: 100%;
   }
 
   .platform {
     justify-content: center;
+  }
+
+  #buy-extra {
+    left: 50%;
+    right: 0;
   }
 }
 
@@ -329,5 +346,13 @@ h3 {
 
   .flex-platform-release {
     flex-direction: row;
+  }
+
+  #buy-extra {
+    display: none;
+  }
+
+  .rating {
+    margin-top: 1rem;
   }
 }
