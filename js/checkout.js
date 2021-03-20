@@ -19,6 +19,7 @@ const deliver = document.querySelectorAll(`input[name="delivery"]`)
 const pay = document.querySelectorAll(".pay-button");
 const deliveryError = document.querySelector(".delivery-error");
 const payError = document.querySelector(".payment-error");
+const req = document.querySelectorAll(".req");
 
 
 function validateEmail(email) {
@@ -89,7 +90,7 @@ function validateForm(event) {
                 console.log("checked delivery")
                 return true;
             }  else {
-                deliveryError.style.display = "block";
+                deliveryError.style.display = "flex";
                 console.log("not checked delivery")
                 return false;
             }
@@ -106,100 +107,18 @@ function validateForm(event) {
             console.log("checked")
             return true;
         } else {
-            payError.style.display = "block";
+            payError.style.display = "flex";
             console.log("not checked")
             return false;
         } 
     }
 };
 
-console.log(pay.length)
-console.log(deliver.length)
-
-/* 
-fullName.addEventListener("input", function() {
-    if (checkLength(fullName.value, 4)) {
-        nameInput.style.borderColor = "red";
-        nameError.style.display = "block";
-    } else {
-        nameInput.style.borderColor = "rgb(42, 179, 42)";
-        nameError.style.display = "none";
+function required() {
+    for (let j = 0; j < req.length; j++) {
+        req[j].style.display = "none";
     }
-});
-
-email.addEventListener("input", function() {
-    if (validateEmail(email.value)) {
-        email.style.borderColor = "rgb(42, 179, 42)";
-        emailError.style.display = "none";
-    } else {
-        email.style.borderColor = "red";
-        emailError.style.display = "block";
-    }
-});
-
-street.addEventListener("input", function() {
-    if (checkLength(street.value, 5)) {
-        street.style.borderColor = "red";
-        streetError.style.display = "block";
-    } else {
-        street.style.borderColor = "rgb(42, 179, 42)";
-        streetError.style.display = "none";
-    }
-});
-
-state.addEventListener("input", function() {
-    if (checkLength(state.value, 1)) {
-        state.style.borderColor = "red";
-        stateError.style.display = "block";
-    } else {
-        state.style.borderColor = "rgb(42, 179, 42)";
-        stateError.style.display = "none";
-    }
-});
-
-postal.addEventListener("input", function() {
-    if (checkLength(postal.value, 4)) {
-        postal.style.borderColor = "red";
-        postalError.style.display = "block";
-    } else {
-        postal.style.borderColor = "rgb(42, 179, 42)";
-        postalError.style.display = "none";
-    }
-});
-
-
-    deliver.forEach(del => del.addEventListener("click", function () {
-    
-        let delValue;
-    
-        if (del.checked) {
-    
-            delValue = del.value;
-    
-            if (!delValue) {
-                deliveryError.style.display = "block";
-                return false;
-            } else {
-                deliveryError.style.display = "none";
-                return true;
-            }
-        }
-    }));
-
-pay.forEach(p => p.addEventListener("click", function() {
-
-    let payValue;
-
-    if (p.checked) {
-        payValue = p.value;
-        payError.style.display = "none";
-        console.log("checked")
-    } else {
-        payError.style.display = "block";
-        console.log("not checked")
-    } 
-})); */
-
+} 
 
 function submitForm(event) {
     event.preventDefault();
@@ -216,7 +135,8 @@ function submitForm(event) {
      document.location.href = "checkout-success.html";
     } else {
      button.disabled = true;
-     buttonError.style.display = "block";
+     buttonError.style.display = "flex";
+     required();
  }
   /*    form.reset(); */
  };

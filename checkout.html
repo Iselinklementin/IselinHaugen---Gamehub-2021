@@ -70,7 +70,7 @@
 
           <label class="name" for="name">
             <div class="label-wrapper">
-            First name / Surname
+            First name / Surname <div class="req">Required</div> 
             <div class="error" id="name-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
             <!-- <i class="far fa-check-circle"></i> -->
           <input type="text" name="name" id="name" class="form-input fullname" placeholder="First name / Surname"/>
@@ -78,7 +78,7 @@
 
           <label class="email" for="email">
             <div class="label-wrapper">
-            Email
+            Email <span class="req">Required</span> 
             <div class="error" id="email-error"><i class="fas fa-exclamation-triangle"></i>Please enter a valid email address</div></div>
           <input type="text" name="email" id="email" class="form-input" placeholder="Email" required/>
           <!-- <i class="far fa-check-circle"></i> -->
@@ -99,21 +99,21 @@
 
           <label for="street">
             <div class="label-wrapper">
-            Street
+            Street <span class="req">Required</span> 
             <div class="error" id="street-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
           <input type="text" name="street" id="street" class="form-input" placeholder="Street"/>
         </label>
 
           <label for="state">
             <div class="label-wrapper">
-            State
+            State <span class="req">Required</span> 
             <div class="error" id="state-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
           <input type="text" name="state" id="state" class="form-input" placeholder="State"/>
         </label>
 
           <label for="postal-code">
             <div class="label-wrapper">
-            Postal code
+            Postal code <span class="req">4 digits required</span> 
             <div class="error" id="postal-error"><i class="fas fa-exclamation-triangle"></i>This is required</div></div>
           <input type="number" name="post-code" id="post-code" class="form-input" placeholder="Postal code"/>
         </label>
@@ -129,7 +129,7 @@
       <div class="form">
         <fieldset>
           <legend>Delivery method</legend>
-
+          <div class="radio-error delivery-error error"><i class="fas fa-exclamation-triangle"></i>Please choose a delivery method</div>
           <div class="radio-wrap">
           <label class="radio-container">
             <span class="radio-text">Pick-up point</span><input type="radio" name="delivery" value="pickup"><span class="hub-radio"></span>
@@ -137,7 +137,6 @@
           <label class="radio-container">
             <span class="radio-text">Home address</span><input type="radio" name="delivery" value="homeaddress"><span class="hub-radio"></span>
          </label>
-         <div class="radio-error delivery-error error"><i class="fas fa-exclamation-triangle"></i>Please choose a delivery method</div>
 
  <!--         <div class="radio-error" id="home-error"><i class="fas fa-exclamation-triangle"></i></div>
          <div class="radio-error" id="pickup-error"><i class="fas fa-exclamation-triangle"></i></div> -->
@@ -154,7 +153,7 @@
       <div class="form">     
         <fieldset>
           <legend>Payment</legend>
-
+          <div class="radio-error payment-error error"><i class="fas fa-exclamation-triangle"></i>Please choose a payment method</div>
           <div class="radio-wrap">
           <label class="radio-container radio-pay">
             <span class="radio-text">Klarna - Pay in 14 days</span><input type="radio" class="pay-klarna pay-button" name="payment" value="klarna" aria-required="true"><span class="hub-radio"></span>
@@ -163,7 +162,6 @@
           </label>
           <label class="radio-container radio-pay"><span class="radio-text">Pay monthly</span><input type="radio" class="pay-monthly pay-button" name="payment" value="monthly" aria-required="true"><span class="hub-radio"></span>
           </label>
-          <div class="radio-error payment-error error"><i class="fas fa-exclamation-triangle"></i>Please choose a payment method</div>
 <!--           <div class="radio-error" id="klarna-error"><i class="fas fa-exclamation-triangle"></i></div>
           <div class="radio-error" id="monthly-error"><i class="fas fa-exclamation-triangle"></i></div>
           <div class="radio-error" id="mastercard-error"><i class="fas fa-exclamation-triangle"></i></div> -->
