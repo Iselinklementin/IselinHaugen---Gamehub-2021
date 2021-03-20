@@ -142,7 +142,7 @@ function submitForm(event) {
     let stateVal = checkLength(state.value, 1);
     let postVal = checkLength(postal.value, 4);
 
-    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal && !pay && !deliver) {
+    if (mailVal && !nameVal && !streetVal && !stateVal && !postVal && pay && deliver) {
      button.disabled = false;
      buttonError.style.display = "none";
      document.location.href = "checkout-success.html";
