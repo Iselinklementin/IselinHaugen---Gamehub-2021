@@ -109,7 +109,11 @@ h1 {
   display: none;
 }
 
-/* ----------- */
+.container-error {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
 
 .rate {
   display: flex;

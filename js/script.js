@@ -12,13 +12,11 @@ async function getRAWG() {
         const result = await response.json();
         const games = result.results;
 
-        console.log(games);
-        console.log("This works");
-
         index(games);
 
-    } catch {
-
+    } catch (errorMessage) {
+        gamesTopContainer.innerHTML = "";
+        console.log(errorMessage);
     } finally {
 
     }
