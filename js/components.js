@@ -36,7 +36,7 @@ for (let i = 0; i < closeConfirmation.length; i++) {
 
   buyBtn.forEach(btn => {
     btn.addEventListener("click", event => {
-      btn.innerText = "Added to cart";
+      btn.innerText = "Added";
       btn.style.border = "var(--secondary-border-purple)";
       btn.style.backgroundColor = "var(--secondary-color-purple)";
       btn.style.color = "white";

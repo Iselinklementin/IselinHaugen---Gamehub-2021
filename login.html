@@ -84,9 +84,9 @@
       <div class="label">
         <label for="password" class="label">
           Password <br>
-<!--           <small id="small"> Must contain one uppercase character</small> <br> <small id="small"> and be eight characters or longer </small> -->
+          <div id="password-info"><small id="small"> Must contain uppercase / lowercase</small> <br> <small id="small"> and minimum 8 characters</small></div>
             <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
-        <div class="error" id="password-error"><i class="fas fa-exclamation-triangle"></i>Too few characters/missing uppercase</div>
+        <div class="error" id="password-error"><i class="fas fa-exclamation-triangle"></i>Include upper/lowercase and 8 char.</div>
         </label>
       </div>
         
@@ -94,7 +94,6 @@
       </fieldset>
       <div class="error-button">Please fill out required fields</div>
       <a class="button button-blue" id="submitBtn">Log in</a> 
-   <!--  button onclick til account  -->
       </form>
   </section>
 

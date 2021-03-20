@@ -68,13 +68,12 @@ function imgSection(result) {
 const paraIntro = document.querySelector(".intro-text");
 const platforms = document.querySelector(".platform");
 const rating = document.querySelector(".rating");
-/* const ratingTop = document.querySelector(".rating-top") */
 const ratingCount = document.querySelector(".count");
 const released = document.querySelector(".released");
 const recommended = document.querySelector(".recommended");
 
 function introHeading(result) {
-    paraIntro.innerHTML = `${result.description}`;
+    paraIntro.innerHTML += `<p>${result.description}</p>`;
 
     const platform = result.platforms;
     
@@ -176,6 +175,7 @@ function gameInCart (result) {
 
     cartImg.innerHTML += `<img class="imgCart" src="${result.background_image}">`
     cartInfo.innerHTML +=  `<p class="cartName">${result.name}</p>
+                            <p>299,-</p>
                             <p><strong>Released:</strong> ${result.released}
                             <br><strong>Platform:</strong> ${gamePlatform}</p>`
                             break;

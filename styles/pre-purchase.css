@@ -44,17 +44,6 @@ html {
   text-align: center;
 }
 
-/* button {
-  display: block;
-  margin: auto;
-  margin-top: 1.3rem;
-} */
-
-/* button a {
-  text-decoration: none;
-  color: var(--black-color);
-} */
-
 h1 {
   padding-top: 3rem;
   line-height: 1.2;
@@ -68,19 +57,12 @@ h1 {
 }
 
 .group-buttons .button:first-child {
-  /*   margin-top: 42rem; */
-
   margin: 42rem auto 1rem;
 }
 
 .group-buttons .button:last-child {
   margin: auto;
 }
-
-/* a.button-blue {
-  margin: auto;
-  margin-top: 1rem;
-} */
 
 /* GAME INFO + TEXT */
 
@@ -208,16 +190,7 @@ th {
     text-align: right;
   }
 
-  /* BUTTONS */
-
-  /* .button {
-    margin-left: 0rem;
-  }
- */
-
   .group-buttons .button:first-child {
-    /*   margin-top: 42rem; */
-
     margin: initial;
     margin-bottom: 1rem;
   }
@@ -231,11 +204,6 @@ th {
     margin-left: 2rem;
     text-align: left;
   }
-
-  /*   a.button-blue {
-    margin-left: 0;
-    margin-top: 1rem;
-  } */
 
   .btn {
     display: block;

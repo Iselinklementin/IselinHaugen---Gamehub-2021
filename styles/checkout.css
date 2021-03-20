@@ -47,35 +47,11 @@ h2 {
   border-radius: 4px;
   border-color: rgba(255, 255, 255, 0.404);
   padding: 2px 30px;
-  /* opacity: 80%; */
-  /* text-align: center; */
   height: 30px;
   margin: auto;
   font-size: 1rem;
   width: 100%;
 }
-
-/* .fa-check-circle {
-  font-size: 1.2rem;
-  color: rgb(42, 179, 42);
-  position: absolute;
-  margin-top: -1.6rem;
-  margin-left: -1.5rem;
-  right: 0;
-  left: 0; */
-/* display: none; */
-/* margin-right: 12.5rem; */
-/* } */
-
-/* .fa-times-circle {
-  font-size: 1.2rem;
-  color: rgb(221, 62, 62);
-  position: absolute;
-  margin-top: -1.6rem;
-  margin-left: -1.5rem;
-  right: 0;
-  left: 0;
-} */
 
 .fa-exclamation-triangle {
   color: rgb(221, 62, 62);
@@ -86,20 +62,17 @@ h2 {
 .error {
   padding: 0;
   display: none;
-  /* font-style: italic; */
   font-size: 0.9rem;
   color: rgb(221, 62, 62);
 }
 
 .error-button {
-  /*   grid-column: span 3;
-  grid-row-start: 1; */
   display: flex;
+  z-index: 2;
   position: absolute;
   font-size: 0.9rem;
   color: white;
   background-color: red;
-  /* border: rgb(221, 62, 62) solid 3px; */
   height: 52px;
   width: 100%;
   line-height: 2;
@@ -113,11 +86,6 @@ h2 {
 }
 
 .radio-error {
-  /* position: absolute; */
-  /*  bottom: -3rem; */
-  /* left: 0;
-  right: 0;
-  margin: 0; */
   background-color: white;
   margin-top: 1rem;
   border: red solid 2px;
@@ -135,7 +103,6 @@ h2 {
 }
 
 .req {
-  /*  display: flex; */
   font-style: italic;
   font-size: 0.9rem;
 }
@@ -156,7 +123,6 @@ legend {
 
 .grid .form {
   margin: 1rem 0;
-  /* text-align: center; */
 }
 
 .checkout label {
@@ -183,23 +149,6 @@ legend {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.041);
 }
-
-/* #street {
-  width: 80%;
-}
-
-.address {
-  width: 100%;
-}
-
-#state,
-#post-code {
-  width: 40%;
-}
-
-.state-postal-wrap {
-  display: flex;
-} */
 
 /* RADIO BUTTONS DELIVERY / PAYMENT */
 

@@ -165,12 +165,11 @@ h2 {
   text-transform: uppercase;
 }
 
-/* ----------   NEW!   ------------ */
+/* ----------   NEW LOADER!   ------------ */
 
 .loader {
   margin: auto;
   border: 16px solid rgb(255, 174, 68);
-  /* border-top: 16px solid rgb(255, 174, 68); */
   border-radius: 100%;
   background-color: rgb(255, 174, 68);
   width: 80px;
@@ -192,176 +191,6 @@ h2 {
     opacity: 0;
   }
 }
-
-/* MODAL  */
-
-.modal {
-  position: fixed;
-  height: 60%;
-  width: 60%;
-  top: 20%;
-  left: 20%;
-  right: 20%;
-  /* bottom: 0; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 1rem; */
-  background: var(--white-color);
-  cursor: pointer;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.35s ease-in;
-}
-
-/* DONE */
-
-.buttons-container-modal {
-  display: flex;
-  justify-content: space-between;
-  width: 450px;
-  margin: 2rem auto;
-}
-
-#modal-button {
-  margin: 0 0.5rem;
-  width: 16rem;
-}
-
-/* DONE */
-
-.modal-dialog {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  /* max-height: 100%; */
-  /* border-radius: 5px; */
-  background: var(--white);
-  cursor: default;
-  /* margin: 1rem; */
-  /* border: red solid thin; */
-}
-
-/* .modal-dialog > * {
-  padding: 1rem;
-} */
-
-/* .modal-header,
-.modal-footer {
-  background: var(--lightgray);
-}
- */
-
-/* DONE */
-#header-modal {
-  min-height: 40px;
-  max-height: 80px;
-  height: 100%;
-  width: 100%;
-}
-
-/* DONE */
-
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  width: 100%;
-  font-size: 1rem;
-  /* text-transform: uppercase; */
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  /*   border: blue solid 1px; */
-}
-
-.modal-content p:first-of-type {
-  font-size: 1.2rem;
-}
-
-.modal-content > p {
-  padding: 0 20px;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.modal-content span {
-  font-weight: bold;
-}
-
-.modal-header-text {
-  color: black;
-  /* font-weight: normal; */
-}
-
-.cartItems {
-  display: flex;
-  /* border: red solid thin; */
-  width: 70%;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.imgCart {
-  width: 170px;
-  height: 185px;
-  object-position: center;
-  object-fit: cover;
-}
-/* DONE */
-.cartInfo {
-  padding-left: 30px;
-  /* border: blue solid thin; */
-}
-
-.cartName {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* .modal-content {
-  margin-top: 0;
-  padding-top: 0;
-} */
-
-/* .modal-header .modal-close {
-  font-size: 1.5rem;
-} */
-
-/* .close-modal {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 20px;
-  box-shadow: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: transparent;
-  border-style: none;
-  /* margin-right: -20px; 
-} */
-
-/* .modal p + p {
-  margin-top: 1rem;
-} */
-
-/* DONE */
-
-.modal.is-visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* END */
 
 .platforms {
   border: red solid thin;
@@ -575,6 +404,7 @@ a.purple {
 
 .price {
   font-weight: bold;
+  text-align: center;
 }
 
 /* footer */
@@ -639,121 +469,118 @@ footer figure {
   padding: 0.5rem;
 }
 
-/* footer media */
-
-@media (min-width: 250px) {
-  .modal {
-    position: fixed;
-    height: 70%;
-    width: 80%;
-    top: 15%;
-    left: 10%;
-    right: 10%;
-    bottom: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--white-color);
-    cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.35s ease-in;
-  }
-
-  .buttons-container-modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 2rem auto;
-  }
-
-  #modal-button,
-  .modal-button {
-    margin: 0.3rem;
-    width: 16rem;
-  }
-
-  .modal-dialog {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: var(--white);
-    cursor: default;
-  }
-  #header-modal {
-    min-height: 40px;
-    max-height: 80px;
-    height: 100%;
-    width: 100%;
-  }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    /*   border: blue solid 1px; */
-  }
-
-  .modal-content p:first-of-type {
-    font-size: 1rem;
-  }
-
-  .modal-content > p {
-    padding: 0 10px 0 5px;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .modal-content span {
-    font-weight: bold;
-  }
-
-  .modal-header-text {
-    color: black;
-  }
-
-  .cartItems {
-    display: flex;
-    width: 80%;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-  .imgCart {
-    width: 150px;
-    height: 185px;
-    object-position: center;
-    object-fit: cover;
-  }
-
-  .cartInfo {
-    padding-left: 10px;
-  }
-
-  .cartName {
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  .modal.is-visible {
-    visibility: visible;
-    opacity: 1;
-  }
+.modal {
+  position: fixed;
+  height: 70%;
+  width: 80%;
+  top: 15%;
+  left: 10%;
+  right: 10%;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white-color);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
 }
+
+.buttons-container-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+#modal-button,
+.modal-button {
+  margin: 0.3rem;
+  width: 16rem;
+}
+
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  cursor: default;
+}
+#header-modal {
+  min-height: 40px;
+  max-height: 80px;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 100%;
+  font-size: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content p:first-of-type {
+  font-size: 1rem;
+}
+
+.modal-content > p {
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal-content span {
+  font-weight: bold;
+}
+
+.modal-header-text {
+  color: black;
+}
+
+.cartItems {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.imgCart {
+  width: 150px;
+  height: 185px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.cartInfo {
+  padding-left: 10px;
+}
+
+.cartName {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Footer media */
 
 @media (min-width: 750px) {
   .modal {

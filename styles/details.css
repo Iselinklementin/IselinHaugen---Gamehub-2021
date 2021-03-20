@@ -48,7 +48,7 @@ h1 {
 .container {
   position: relative;
   display: flex;
-  flex-direction: column; /*///////////////// DONEONEONDONE */
+  flex-direction: column;
   color: white;
   margin: auto;
   margin-top: 6rem;
@@ -56,21 +56,18 @@ h1 {
 
 .gameinfo,
 .system {
-  display: none; /*///////////////// DONEONEONDONE */
+  display: none;
 }
 
 .img-details-info-wrap {
-  width: 100%; /*///////////////// NEW */
-  /* width: 50%; */ /*/----------------- OLD */
-  height: 600px; /*///////////////// NEW */
-  /* height: 1000px; */
+  width: 100%;
+  height: 600px;
   padding: 1rem;
 }
 
 .img-header {
   width: 100%;
-  height: 100%; /*///////////////// NEW */
-  /* height: 55%; */ /*/----------------- OLD */
+  height: 100%;
   object-position: center;
   object-fit: cover;
 }
@@ -84,13 +81,12 @@ h1 {
 
 .game-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .flex-platform-release {
   display: flex;
-  flex-direction: column; /*///////////////// NEW */ /* DOENDONEONDONEONDONE */
-  /* justify-content: space-between; */ /*/----------------- OLD */
+  justify-content: space-between;
 }
 
 .genre,
@@ -105,12 +101,12 @@ h1 {
 .platform {
   display: flex;
   align-items: center;
-  justify-content: space-between; /*//////////////// DONEODONEONDONEONDE */
+  justify-content: space-between;
 }
 
 .platform span {
   margin-right: 20px;
-  display: none; /*//////////////// DNIODNODNOE */
+  display: none;
 }
 
 /* ----------- */
@@ -120,7 +116,7 @@ h1 {
   align-items: center;
   text-align: center;
   margin: 1rem auto;
-  width: 280px; /*//////////////// DONDONDOEONDOE */
+  width: 280px;
 }
 
 .ratings-box {
@@ -134,15 +130,11 @@ h1 {
 .recommended {
   display: flex;
   width: 100%;
-  flex-direction: column; /*//////////////// DIODOENDONEODNE */
+  flex-direction: column;
 }
 
-/* .recommended p {     
-  margin: 0;
-} */
-/*----------------- OLD */
 .recommended p {
-  margin: 4px 0; /*//////////////// NEW */
+  margin: 4px 0;
 }
 
 /* ----------- */
@@ -189,21 +181,23 @@ h3 {
 }
 
 .intro-heading {
-  /* width: 50%; */ /*/----------------- OLD */
-  text-align: center; /*//////////////// NEW */
-  width: 100%; /*//////////////// NEW */
-  /* padding: 0 3rem 0 1.5rem;   */ /*/----------------- OLD */
+  text-align: center;
+  width: 100%;
   padding: 0 1rem;
 }
 
+.pricetag {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 #buy {
-  margin: 3rem auto; /*/ /////////////// AUTO IS NEW / 0 */
+  margin: 3rem auto;
 }
 
 .recommended-box {
   padding: 5px 10px;
   color: black;
-  /*   border-radius: 6px; */
   width: 100%;
 }
 
@@ -242,12 +236,15 @@ h3 {
   }
 
   .container {
-    flex-direction: row; /*///////////////// NEW */
+    flex-direction: row;
+    margin-top: unset;
+    margin-bottom: 11rem;
   }
 
   .gameinfo,
   .system {
-    display: block; /*///////////////// NEW */
+    display: block;
+    margin-bottom: 3rem;
   }
 
   .flex-platform-release {
@@ -262,7 +259,9 @@ h3 {
 @media only screen and (min-width: 890px) {
   .container {
     margin-top: 1rem;
+    margin-bottom: 13rem;
   }
+
   .rate {
     display: flex;
     align-items: center;
@@ -289,6 +288,10 @@ h3 {
     display: initial;
   }
 
+  .platform {
+    justify-content: left;
+  }
+
   .intro-heading {
     width: 50%;
     padding: 0 3rem 0 1.5rem;
@@ -302,9 +305,12 @@ h3 {
 
 @media only screen and (min-width: 1050px) {
   h1 {
-    font-size: 4.4rem;
+    font-size: 4rem;
     text-align: left;
-    /*     margin-left: 2rem; */
+  }
+
+  .container {
+    margin-bottom: unset;
   }
 
   .img-details-info-wrap {
@@ -320,16 +326,4 @@ h3 {
   .flex-platform-release {
     flex-direction: row;
   }
-
-  /* #buy {
-    margin: 3rem 0;
-  }
- */
-  /* vurder plass */
-
-  /* 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-} */
 }

@@ -128,24 +128,6 @@ h3 a {
   color: var(--white-color);
 }
 
-/* NEW */
-
-/* .nintendo-box-test {
-  background-color: var(--primary-color);
-  height: 68px;
-}
-
-.plat-name-nintendo-test {
-  background-color: black;
-  color: white;
-  height: 22px;
-  line-height: 1.5;
-}
-
-.nintendo-gamepad-test {
-  src: url(/images/icons/nintendo-black.svg);
-} */
-
 /* GALLERY */
 
 .games-gallery {
@@ -187,9 +169,7 @@ h3 a {
 
 .price {
   color: white;
-  /* background-color: var(--primary-color); */
   height: 25px;
-  /* text-align: center; */
   margin: 0;
   line-height: 1;
   display: none;
@@ -206,8 +186,6 @@ figcaption {
   width: 100%;
   height: 35px;
   margin: 10px 0;
-  /* color: var(--black-color);
-  background-color: var(--primary-color); */
 }
 
 /* NEW */
@@ -378,6 +356,7 @@ figure {
     max-width: 170px;
     text-align: left;
     line-height: 1;
+    text-align: center;
   }
 
   .price {
@@ -417,44 +396,3 @@ figure {
     width: 116px;
   }
 }
-
-/* ////////////////////////////////////////// */
-
-/* .games-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 95%;
-  text-align: center;
-  align-content: center;
-}
-
-.img-wrap {
-  display: flex;
-  justify-content: stretch;
-}
-
-.shop-gallery {
-  width: 100%;
-  height: 205px;
-  margin: 10px 0px;
-  object-fit: cover;
-  object-position: center;
-  position: relative;
-  display: inline-block;
-}
-
-.game1 {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 5px;
-  margin: 12px;
-  width: 154px;
-  margin-top: 0;
-  padding-top: 0;
-  cursor: pointer;
-  background-color: rgba(52, 52, 54, 0.445);
-  align-items: center;
-  justify-content: end;
-}
- */

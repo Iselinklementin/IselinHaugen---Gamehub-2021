@@ -21,7 +21,9 @@ const isPasswordSecure = (password) => {
     return re.test(password);
 };
 
-email.addEventListener("input", function() {
+function validateForm(event) {
+    event.preventDefault();
+
     if (validateEmail(email.value)) {
         email.style.borderColor = "rgb(42, 179, 42)";
         emailError.style.display = "none";
@@ -34,10 +36,7 @@ email.addEventListener("input", function() {
         email.style.borderColor = "red";
         emailError.style.display = "block";
     }
-});
 
-
-password.addEventListener("keyup", function() {
     if (isPasswordSecure(password.value)) {
         password.style.borderColor = "rgb(42, 179, 42)";
         pswError.style.display = "none";
@@ -49,7 +48,8 @@ password.addEventListener("keyup", function() {
         password.style.borderColor = "red";
         pswError.style.display = "block";
     }
-});
+
+}
 
 function submitForm(event) {
     event.preventDefault();
@@ -69,3 +69,4 @@ function submitForm(event) {
  };
 
  button.addEventListener("click", submitForm);
+ button.addEventListener("click", validateForm);

@@ -3,7 +3,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left 50% bottom 18%;
-  /* height: 1300px; */
   width: 100%;
   color: var(--white-color);
 }
@@ -25,8 +24,6 @@ h1 {
   width: 340px;
   justify-content: center;
   margin: 2rem auto 0 auto;
-  /* text-align: center; */
-  /*   height: 1100px; */
 }
 
 .include {
@@ -59,9 +56,7 @@ h1 {
   display: block;
   border-radius: 4px;
   border-color: rgba(255, 255, 255, 0.404);
-  /*   padding: 2px; */
   margin: auto;
-  /*   opacity: 80%; */
   width: 100%;
   height: 2rem;
   text-align: center;
@@ -80,26 +75,9 @@ h1 {
   line-height: 3;
 }
 
-/* .create {
-  background-color: var(--secondary-color-blue);
-  height: 30rem;
-  color: white;
-  flex: 0;
-  padding: 3rem;
-  margin-top: 2rem;
-  border-style: none;
-} */
-
 .register {
   background-color: var(--secondary-color-purple);
   color: white;
-  /*   flex: 0; */
-  /*   padding: 3rem; */
-  /*   margin-top: 2rem; */
-  /*   margin-bottom: 4.5rem; */
-  /*   height: 30rem; */
-  /* height: 35rem; */
-  /*   height: 35rem; */
   border-style: none;
   width: 100%;
   margin-bottom: 3rem;
@@ -112,11 +90,6 @@ h1 {
 
 .error {
   display: none;
-  /* 
-  font-size: 0.9rem;
-  color: rgb(221, 62, 62);
-  background-color: white;
-  border: rgb(221, 62, 62) solid 2px;*/
 }
 
 .error-button {
@@ -126,9 +99,7 @@ h1 {
   background-color: white;
   border: rgb(221, 62, 62) solid 2px;
   height: 32px;
-  /*   width: 328px; */
   line-height: 2;
-  /* margin: auto; */
   margin-bottom: 1.4rem;
   margin-top: 1rem;
   text-align: center;
@@ -175,7 +146,6 @@ button {
 
   .create-account-form {
     flex-direction: row;
-    /* height: 570px; */
     margin-top: 0;
   }
 
