@@ -11,7 +11,6 @@
   
 
   nintendo.addEventListener("click", function () {
-      console.log(valueCountNintendo)
       valueCountNintendo++;
       box.style.backgroundColor = "black";
       platNameNintendo.style.backgroundColor = "var(--primary-color";

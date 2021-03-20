@@ -156,9 +156,7 @@ function gameInCart (result) {
     let platform = result.platforms
 
     for(let i = 0; i < platform.length; i++) {
-        let gamePlatform = platform[0].platform.name;
-        console.log(gamePlatform)
-    
+        let gamePlatform = platform[0].platform.name;    
 
     cartImg.innerHTML += `<img class="imgCart" src="${result.background_image}">`
     cartInfo.innerHTML +=  `<p class="cartName">${result.name}</p>
