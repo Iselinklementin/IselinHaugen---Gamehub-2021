@@ -48,7 +48,38 @@ function checkLength(value, len) {
     } else {
         return false;
     }
-}
+};
+
+
+function checkedDelivery() {
+
+    for (let i = 0; i < deliver.length; i++) {
+        if (deliver[0].checked || deliver[1].checked) {
+            deliveryError.style.display = "none";
+            console.log("checked delivery")
+            return true;
+        }  else {
+            deliveryError.style.display = "flex";
+            console.log("not checked delivery")
+            return false;
+        }
+    }
+};
+
+function checkedPay() {
+
+for (let i = 0; i < pay.length; i++) {
+
+    if (pay[0].checked || pay[1].checked || pay[2].checked ) {
+        payError.style.display = "none";
+        console.log("checked")
+        return true;
+    } else {
+        payError.style.display = "flex";
+        console.log("not checked")
+        return false;
+    } 
+}};
 
 function validateForm() {
 
@@ -94,39 +125,10 @@ function validateForm() {
         postal.style.borderColor = "rgb(42, 179, 42)";
         postalError.style.display = "none";
     }
+
+    checkedDelivery();
+    checkedPay();
 };
-
-function checkedDelivery() {
-
-    for (let i = 0; i < deliver.length; i++) {
-        if (deliver[0].checked || deliver[1].checked) {
-            deliveryError.style.display = "none";
-            console.log("checked delivery")
-            return true;
-        }  else {
-            deliveryError.style.display = "flex";
-            console.log("not checked delivery")
-            return false;
-        }
-    }
-
-}
-
-
-function checkedPay() {
-
-for (let i = 0; i < pay.length; i++) {
-
-    if (pay[0].checked || pay[1].checked || pay[2].checked ) {
-        payError.style.display = "none";
-        console.log("checked")
-        return true;
-    } else {
-        payError.style.display = "flex";
-        console.log("not checked")
-        return false;
-    } 
-}};
 
 
 function required() {
