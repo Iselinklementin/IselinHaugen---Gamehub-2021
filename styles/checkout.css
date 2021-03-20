@@ -187,8 +187,8 @@ legend {
   height: 15px;
   width: 15px;
   background-color: rgba(238, 238, 238, 0);
-  border-radius: 3px;
-  border: var(--primary-border);
+  border-radius: 16px;
+  border: var(--primary-color) 1.5px solid;
 }
 
 .radio-container:hover input ~ .hub-radio:after {

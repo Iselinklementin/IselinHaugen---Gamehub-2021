@@ -50,17 +50,14 @@ function checkLength(value, len) {
     }
 };
 
-
 function checkedDelivery() {
 
     for (let i = 0; i < deliver.length; i++) {
         if (deliver[0].checked || deliver[1].checked) {
             deliveryError.style.display = "none";
-            console.log("checked delivery")
             return true;
         }  else {
             deliveryError.style.display = "flex";
-            console.log("not checked delivery")
             return false;
         }
     }
@@ -72,19 +69,14 @@ for (let i = 0; i < pay.length; i++) {
 
     if (pay[0].checked || pay[1].checked || pay[2].checked ) {
         payError.style.display = "none";
-        console.log("checked")
         return true;
     } else {
         payError.style.display = "flex";
-        console.log("not checked")
         return false;
     } 
 }};
 
 function validateForm() {
-
-    const deliver = document.querySelectorAll(`input[name="delivery"]`)
-    const pay = document.querySelectorAll(".pay-button");
 
     if (checkLength(fullName.value, 4)) {
         nameInput.style.borderColor = "red";
@@ -145,8 +137,6 @@ function submitForm(event) {
     let streetVal = checkLength(street.value, 5);
     let stateVal = checkLength(state.value, 1);
     let postVal = checkLength(postal.value, 4);
-
-    
 
     if (mailVal && !nameVal && !streetVal && !stateVal && !postVal && checkedPay() && checkedDelivery()) {
      button.disabled = false;
