@@ -7,7 +7,6 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left 50% bottom 18%;
-  height: 1700px;
   width: 100%;
   color: var(--white-color);
   position: relative;
@@ -19,6 +18,7 @@ main {
   grid-template-columns: 340px;
   grid-auto-rows: minmax(150px);
   justify-content: center;
+  margin-bottom: 3rem;
 }
 
 h1 {
@@ -309,10 +309,6 @@ legend {
     grid-gap: 10px;
     grid-template-columns: auto;
     grid-auto-rows: auto;
-  }
-
-  .background {
-    height: 1200px;
   }
 
   h1 {

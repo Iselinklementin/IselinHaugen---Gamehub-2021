@@ -3,7 +3,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left 50% bottom 18%;
-  height: 1500px;
   width: 100%;
   color: var(--white-color);
   text-align: center;
@@ -11,7 +10,6 @@
 .grid {
   padding-top: 1rem;
   display: grid;
-  grid-gap: 30px;
   grid-template-areas:
     "headline"
     "products"
@@ -160,11 +158,9 @@ h2 {
 .games-display {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
   justify-content: center;
-  margin-top: 5rem;
   padding-top: 2rem;
-  margin: 0;
+  margin: 0 auto 3rem auto;
 }
 
 .game {
@@ -193,10 +189,6 @@ h2 {
 /* MEDIA 650px */
 
 @media only screen and (min-width: 650px) {
-  .background {
-    height: 1600px;
-  }
-
   .valuta {
     display: initial;
   }
@@ -214,6 +206,7 @@ h2 {
     max-width: 450px;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 10px;
   }
 
   .coupon {
@@ -234,18 +227,17 @@ h2 {
     padding: 4rem;
   }
 
-  .background {
-    height: 800px;
-  }
-
   .grid {
     justify-content: center;
     grid-gap: 20px;
     grid-template-columns: repeat(3, lfr);
     grid-template-areas:
       "headline headline"
-      "products coupon"
-      "offer-extra offer-extra";
+      "products offer-extra";
+  }
+
+  .background {
+    height: 750px;
   }
 
   h1 {
@@ -278,31 +270,16 @@ h2 {
     max-height: 550px;
   }
 
-  /* COUPON */
-
-  .coupon {
-    border: none;
-  }
-
-  .coupon-container {
-    width: auto;
-    padding-top: 0;
-  }
-
-  .coupon p:nth-child(2) {
-    padding-top: 0.4rem;
-  }
-
-  .insert-coupon {
-    width: 50%;
-    margin: auto;
-  }
-
   /* EXTRA */
 
   .extra {
-    width: auto;
     margin: 0;
+  }
+
+  .offer-extra {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.7rem;
   }
 
   .game img {
@@ -310,13 +287,18 @@ h2 {
   }
 
   .game {
-    margin: 0.2rem;
     padding: 1px;
     height: auto;
   }
 
   .games-display {
     padding-top: 0;
+  }
+
+  .button {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
   }
 }
 
@@ -327,18 +309,5 @@ h2 {
     align-items: baseline;
     display: block;
     height: 360px;
-  }
-
-  .games-display {
-    flex-wrap: nowrap;
-  }
-
-  .game {
-    margin: 0.2rem;
-    padding-top: 1rem;
-  }
-
-  .game img {
-    width: 140px;
   }
 }

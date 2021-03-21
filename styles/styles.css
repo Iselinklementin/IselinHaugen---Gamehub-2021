@@ -249,8 +249,8 @@ h2 {
   }
 
   li.login,
-  .far:hover,
-  .fas:hover {
+  .fa-search:hover,
+  .fa-user:hover {
     color: var(--primary-color);
   }
 
@@ -293,7 +293,6 @@ h2 {
   a .far,
   a .fas {
     color: var(--white-color);
-    /* padding-right: 10px; */
     font-size: 1.3rem;
   }
 
@@ -474,6 +473,7 @@ footer figure {
 }
 
 .modal {
+  z-index: 10;
   position: fixed;
   height: 100%;
   width: 100%;
