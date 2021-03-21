@@ -8,7 +8,6 @@
   let valueCountPC = 1;
   let valueCountXbox = 1;
   let valueCountPs = 1;
-  
 
   nintendo.addEventListener("click", function () {
       valueCountNintendo++;
@@ -94,6 +93,8 @@
     platNamePs.style.color = "white";
     psIcon.src = "/images/icons/ps-black.svg";
  }}); 
+
+
 
 
 const cartImg = document.querySelector(".cartImg");
