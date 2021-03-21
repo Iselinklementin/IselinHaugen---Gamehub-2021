@@ -46,12 +46,6 @@ h1 {
   padding-right: 10px;
 }
 
-.fa-check-circle {
-  color: rgb(37, 223, 77);
-  font-size: 1rem;
-  padding-right: 10px;
-}
-
 .form-input {
   display: block;
   border-radius: 4px;
@@ -84,8 +78,7 @@ h1 {
 }
 
 .button {
-  margin: auto;
-  margin-top: 1.6rem;
+  margin: 1.6rem auto 1rem auto;
 }
 
 .error {
