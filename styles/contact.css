@@ -3,7 +3,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left 50% bottom 18%;
-  height: 1100px;
+  height: 1600px;
   width: 100%;
   color: var(--white-color);
   text-align: center;
@@ -35,6 +35,93 @@ h2 {
   justify-content: center;
   line-height: 2.4rem;
   margin: 0;
+}
+
+.button {
+  margin: auto;
+}
+
+/* FORM */
+
+.fa-exclamation-triangle {
+  color: orange;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+.error {
+  display: none;
+}
+
+.error-button {
+  display: none;
+  font-size: 0.9rem;
+  color: rgb(221, 62, 62);
+  background-color: white;
+  border: rgb(221, 62, 62) solid 2px;
+  height: 45px;
+  width: 342px;
+  line-height: 3;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1.4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.label {
+  margin: 1rem;
+  line-height: 3;
+  margin: 10px auto;
+  width: 340px;
+}
+
+.labelwrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input,
+.address-input {
+  display: block;
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.404);
+  padding: 1px;
+  height: 30px;
+  width: 100%;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.address-input {
+  height: 80px;
+  font-family: inherit;
+}
+
+button {
+  height: 2rem;
+  width: 10rem;
+  margin: 1rem auto;
+}
+
+.message {
+  height: 50px;
+  width: 400px;
+  background-color: green;
+  margin: 1rem auto;
+  text-align: center;
+  line-height: 1;
+  display: none;
+}
+
+.info {
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 /* CONTAINERS */
@@ -74,7 +161,7 @@ tr {
 .some-contact {
   display: none;
   position: relative;
-  top: 18%;
+  top: 8%;
 }
 
 .some-contact .fab {
@@ -85,11 +172,14 @@ tr {
 
 @media only screen and (min-width: 617px) {
   main {
-    height: 800px;
+    height: 1400px;
   }
 }
 
 @media only screen and (min-width: 926px) {
+  main {
+    height: 1200px;
+  }
   .some-contact {
     display: block;
   }

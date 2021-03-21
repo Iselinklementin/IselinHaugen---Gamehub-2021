@@ -65,8 +65,37 @@
     <main id="main">
 
       <figure class="contact-icon"></figure>
-
       <h1>Contact us</h1>
+
+      <form class="contact-form">
+        <div class="message"></div>
+        <label class="label">
+          <div class="labelwrap">
+            Name (Required) <div class="error" id="nameError"><i class="fas fa-exclamation-triangle"></i></div></div>
+            <input type="text" class="fullName form-input">
+        </label>
+        <label class="label">
+          <div class="labelwrap">
+            Subject (min. 10 characters)
+            <div class="error" id="subjectError"><i class="fas fa-exclamation-triangle"></i></div></div>
+            <input type="text" class="subject form-input">
+        </label>
+        <label class="label">
+          <div class="labelwrap">
+            Email (Required)
+            <div class="error" id="emailError"><i class="fas fa-exclamation-triangle"></i></div></div>
+        <input type="email" name="" class="email form-input">
+        </label>
+        <label class="label">
+          <div class="labelwrap">
+            Address (min. 20 characters)
+            <div class="error" id="addressError"><i class="fas fa-exclamation-triangle"></i></div></div>
+        <textarea type="text" class="address address-input form-input"></textarea>
+        </label class="label">
+        <div class="error-button error"><i class="fas fa-exclamation-triangle"></i>Please fill out required fields</div>
+        <a class="button" disabled>Submit</a>
+        <p class="info">You need to fill out the form before submitting</p>
+    </form>
 
       <!-- CUSTOMER SUPPORT -->
 
@@ -176,5 +205,6 @@
      
       </ul>
     </footer>
+    <script src="/js/contact.js"></script>
   </body>
 </html>
