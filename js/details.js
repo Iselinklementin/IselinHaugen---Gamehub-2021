@@ -4,6 +4,8 @@ const id = params.get("id");
 const url = `https://api.rawg.io/api/games/` + id + "?key=fcc585ed59594a80838bbaaa391aa796&dates=2019-09-01,2019-09-30&platforms=18,1,7";
 const loader = document.querySelector(".loader");
 const container = document.querySelector(".container");
+/* const extraBtn = document.querySelector("#buy-extra"); */
+const detailBtns = document.querySelectorAll(".detail-btn");
 
 async function fetchGame() {
     try {
@@ -146,7 +148,74 @@ function introHeading(result) {
 };
 
 
-// MODAL //
+// MODAL - BUTTONS - CHANGE ON ADD //
+
+const modal = document.querySelector(".modal");
+const openModal = document.querySelectorAll("[data-open]");
+const closeModal = document.querySelectorAll("[data-close]");
+
+for(let i = 0; i < openModal.length; i++) {
+    openModal[i].addEventListener("click", function() {
+      modal.style.display = "flex";
+    });
+  };
+
+// ADDED TO CART BUTTONS //
+
+detailBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+        btn.innerText = "Added";
+        btn.style.border = "var(--secondary-border-purple)";
+        btn.style.backgroundColor = "var(--secondary-color-purple)";
+        btn.style.color = "white";
+    })
+});
+  
+let count = 0;
+  
+for (let i = 0; i < closeModal.length; i++) {
+    closeModal[i].addEventListener("click", function() {
+        modal.style.display = "none";
+        
+        setInterval(function() {
+          count++;
+  
+          if(count === 2) {
+            clearInterval();
+  
+            detailBtns.forEach(btn => {
+              btn.innerText = "Add to cart";
+              btn.style.backgroundColor = "orange";
+              btn.style.color = "black";
+              btn.style.border = "var(--primary-color-btn-border)";
+            })
+          }
+        },1000);
+    });
+};
+  
+window.onclick = function(event) {
+    if (event.target === modal) {
+          modal.style.display = "none";
+  
+          setInterval(function() {
+          count++;
+  
+          if(count === 2) {
+            clearInterval();
+  
+            detailBtns.forEach(btn => {
+              btn.innerText = "Add to cart";
+              btn.style.backgroundColor = "orange";
+              btn.style.color = "black";
+              btn.style.border = "var(--primary-color-btn-border)";
+            })
+          }
+        },1000);
+    }
+}
+
+    // MODAL CART //
 
 const cartImg = document.querySelector(".cartImg");
 const cartInfo = document.querySelector(".cartInfo")

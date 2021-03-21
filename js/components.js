@@ -2,7 +2,6 @@ const modal = document.querySelector(".modal");
 const openModal = document.querySelectorAll("[data-open]");
 const closeModal = document.querySelectorAll("[data-close]");
 const buyBtn = document.querySelectorAll("#buy");
-const extraBtn = document.querySelector("#buy-extra");
 
 // CLOSE MODAL AND CHANGE ADD-BUTTON //
  
@@ -23,11 +22,6 @@ for (let i = 0; i < closeModal.length; i++) {
 
         if(counter === 2) {
           clearInterval();
-
-          extraBtn.innerText = "Add to cart";
-          extraBtn.style.backgroundColor = "orange";
-          extraBtn.style.color = "black";
-          extraBtn.style.border = "var(--primary-color-btn-border)";
 
           buyBtn.forEach(btn => {
             btn.innerText = "Add to cart";
@@ -50,11 +44,6 @@ for (let i = 0; i < closeModal.length; i++) {
         if(counter === 2) {
           clearInterval();
 
-          extraBtn.innerText = "Add to cart";
-          extraBtn.style.backgroundColor = "orange";
-          extraBtn.style.color = "black";
-          extraBtn.style.border = "var(--primary-color-btn-border)";
-
           buyBtn.forEach(btn => {
             btn.innerText = "Add to cart";
             btn.style.backgroundColor = "orange";
@@ -76,13 +65,6 @@ for (let i = 0; i < closeModal.length; i++) {
       btn.style.color = "white";
     })
   });
-
-  extraBtn.onclick = function() {
-    extraBtn.innerText = "Added";
-    extraBtn.style.border = "var(--secondary-border-purple)";
-    extraBtn.style.backgroundColor = "var(--secondary-color-purple)";
-    extraBtn.style.color = "white";
-   }
 
   // ERROR //
 
