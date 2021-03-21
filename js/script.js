@@ -38,7 +38,7 @@ function index(games) {
                     <div class="games-java"><img src="${item.background_image}" class="gallery-top" id="games-java-css" alt="Picture"/></div>
                         
                     <div class="text-wrapper">
-                    <h3 class="game-name">${item.name}</h3>
+                    <h3 class="game-name" text-decoration="none">${item.name}</h3>
                     </div>
                     </figure></a>`;
     })
